@@ -28,8 +28,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -86,6 +84,7 @@ namespace OpenTween
         public long RetweetedByUserId { get; set; }
         public long InReplyToUserId { get; set; }
         public Dictionary<string, string> Media { get; set; }
+        public bool? IsStolen { get; set; }
 
         public string RelTabName { get; set; }
         public int FavoritedCount { get; set; }
@@ -163,6 +162,7 @@ namespace OpenTween
             RetweetedBy = "";
             RelTabName = "";
             Media = new Dictionary<string, string>();
+            IsStolen = null;
             ReplyToList = new List<string>();
         }
 
@@ -383,7 +383,7 @@ namespace OpenTween
         //個別タブの情報をDictionaryで保持
         private IdComparerClass _sorter;
         private Dictionary<string, TabClass> _tabs = new Dictionary<string, TabClass>();
-        private Dictionary<long, PostClass> _statuses = new Dictionary<long, PostClass>();
+        public Dictionary<long, PostClass> _statuses = new Dictionary<long, PostClass>();
         private List<long> _addedIds;
         private List<long> _deletedIds = new List<long>();
         private Dictionary<long, PostClass> _retweets = new Dictionary<long, PostClass>();
@@ -760,8 +760,8 @@ namespace OpenTween
                             {
                                 lock (LockUnread)
                                 {
-                                    tab.UnreadCount--;
-                                    this.SetNextUnreadId(Id, tab);
+                                    //tab.UnreadCount--;
+                                    //this.SetNextUnreadId(Id, tab);
                                 }
                             }
                         }
@@ -771,15 +771,15 @@ namespace OpenTween
                             {
                                 lock (LockUnread)
                                 {
-                                    tab.UnreadCount--;
-                                    this.SetNextUnreadId(Id, tab);
+                                    //tab.UnreadCount--;
+                                    //this.SetNextUnreadId(Id, tab);
                                 }
                             }
                         }
-                        tab.Remove(Id);
+                        //tab.Remove(Id);
                     }
                 }
-                if (_statuses.ContainsKey(Id)) _statuses.Remove(Id);
+                //if (_statuses.ContainsKey(Id)) _statuses.Remove(Id);
             }
         }
 
@@ -1879,16 +1879,26 @@ namespace OpenTween
         {
             lock (LockObj)
             {
-                foreach (var post in _statuses.Values)
+                if (follower.Count > 0)
                 {
-                    //if (post.UserId = 0 || post.IsDm) Continue For
-                    if (post.IsMe)
+                    foreach (var post in _statuses.Values)
                     {
-                        post.IsOwl = false;
+                        //if (post.UserId = 0 || post.IsDm) Continue For
+                        if (post.IsMe)
+                        {
+                            post.IsOwl = false;
+                        }
+                        else
+                        {
+                            post.IsOwl = !follower.Contains(post.UserId);
+                        }
                     }
-                    else
+                }
+                else
+                {
+                    foreach (var id in _statuses.Keys)
                     {
-                        post.IsOwl = !follower.Contains(post.UserId);
+                        _statuses[id].IsOwl = false;
                     }
                 }
             }
@@ -3410,7 +3420,7 @@ namespace OpenTween
             {
                 foreach (var flt in this.BodyFilter)
                 {
-                    destination.BodyFilter.Add(flt);
+                    destination.BodyFilter.Add(string.Copy(flt));
                 }
             }
 
@@ -3418,7 +3428,7 @@ namespace OpenTween
             {
                 foreach (var flt in this.ExBodyFilter)
                 {
-                    destination.ExBodyFilter.Add(flt);
+                    destination.ExBodyFilter.Add(string.Copy(flt));
                 }
             }
 

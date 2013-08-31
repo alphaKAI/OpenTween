@@ -33,20 +33,12 @@ namespace OpenTween.Thumbnail.Services
     class SimpleThumbnailService : IThumbnailService
     {
         protected Regex regex;
-        protected string thumb_replacement;
-        protected string fullsize_replacement;
+        protected string replacement;
 
         public SimpleThumbnailService(string pattern, string replacement)
         {
             this.regex = new Regex(pattern, RegexOptions.IgnoreCase);
-            this.thumb_replacement = replacement;
-        }
-
-        public SimpleThumbnailService(string pattern, string replacement, string file_replacement)
-        {
-            this.regex = new Regex(pattern, RegexOptions.IgnoreCase);
-            this.thumb_replacement = replacement;
-            this.fullsize_replacement = file_replacement;
+            this.replacement = replacement;
         }
 
         public override ThumbnailInfo GetThumbnailInfo(string url, PostClass post)
@@ -59,21 +51,14 @@ namespace OpenTween.Thumbnail.Services
                 ImageUrl = url,
                 ThumbnailUrl = thumbnailUrl,
                 TooltipText = null,
-                FullSizeImageUrl = ReplaceUrl(url, this.fullsize_replacement)
             };
         }
 
         protected string ReplaceUrl(string url)
         {
-            return ReplaceUrl(url, this.thumb_replacement);
-        }
-
-        protected string ReplaceUrl(string url, string replacement)
-        {
-            if (replacement == null) return null;
             var match = this.regex.Match(url);
 
-            return match.Success ? match.Result(replacement) : null;
+            return match.Success ? match.Result(this.replacement) : null;
         }
     }
 }

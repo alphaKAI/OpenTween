@@ -67,7 +67,6 @@ namespace OpenTween
         [Test]
         public void FindTopOfReplyChainTest()
         {
-            var tw = new Twitter(null);
             var posts = new Dictionary<long, PostClass>
             {
                 {950L, new PostClass { StatusId = 950L, InReplyToStatusId = 0L }}, // このツイートが末端
@@ -75,9 +74,9 @@ namespace OpenTween
                 {999L, new PostClass { StatusId = 999L, InReplyToStatusId = 987L }},
                 {1000L, new PostClass { StatusId = 1000L, InReplyToStatusId = 999L }},
             };
-            Assert.That(tw.FindTopOfReplyChain(posts, 1000L).StatusId, Is.EqualTo(950L));
-            Assert.That(tw.FindTopOfReplyChain(posts, 950L).StatusId, Is.EqualTo(950L));
-            Assert.That(() => tw.FindTopOfReplyChain(posts, 500L), Throws.ArgumentException);
+            Assert.That(Twitter.FindTopOfReplyChain(posts, 1000L).StatusId, Is.EqualTo(950L));
+            Assert.That(Twitter.FindTopOfReplyChain(posts, 950L).StatusId, Is.EqualTo(950L));
+            Assert.That(() => Twitter.FindTopOfReplyChain(posts, 500L), Throws.ArgumentException);
 
             posts = new Dictionary<long, PostClass>
             {
@@ -86,8 +85,8 @@ namespace OpenTween
                 {1220L, new PostClass { StatusId = 1220L, InReplyToStatusId = 1210L }},
                 {1230L, new PostClass { StatusId = 1230L, InReplyToStatusId = 1220L }},
             };
-            Assert.That(tw.FindTopOfReplyChain(posts, 1230L).StatusId, Is.EqualTo(1210L));
-            Assert.That(tw.FindTopOfReplyChain(posts, 1210L).StatusId, Is.EqualTo(1210L));
+            Assert.That(Twitter.FindTopOfReplyChain(posts, 1230L).StatusId, Is.EqualTo(1210L));
+            Assert.That(Twitter.FindTopOfReplyChain(posts, 1210L).StatusId, Is.EqualTo(1210L));
         }
     }
 }

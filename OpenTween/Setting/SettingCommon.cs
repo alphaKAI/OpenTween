@@ -5,6 +5,7 @@
 //           (c) 2010-2011 anis774 (@anis774) <http://d.hatena.ne.jp/anis774/>
 //           (c) 2010-2011 fantasticswallow (@f_swallow) <http://twitter.com/f_swallow>
 //           (c) 2011      kim_upsilon (@kim_upsilon) <https://upsilo.net/~upsilon/>
+//           (c) 2012      re4k (@re4k) <http://re4k.info/>
 // All rights reserved.
 // 
 // This file is part of OpenTween.
@@ -25,14 +26,10 @@
 // Boston, MA 02110-1301, USA.
 
 using System;
-using System.Linq;
 using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using OpenTween.Thumbnail;
-using OpenTween.Connection;
-using System.ComponentModel;
-using System.Drawing;
 
 namespace OpenTween
 {
@@ -52,25 +49,87 @@ namespace OpenTween
         }
         #endregion
 
-        public BindingList<UserAccount> UserAccounts = new BindingList<UserAccount>();
-        public int[] TimelineAccountIds = new int[0];
-        public int CurrentAccountId = 0;
+        public List<UserAccount> UserAccounts;
+        public string UserName = "";
+        public string TLUserName = "";
+
         [XmlIgnore]
-        public UserAccount CurrentAccount
+        public string Password = "";
+        public string EncryptPassword
         {
-            get
-            {
-                if (UserAccounts != null && UserAccounts.Count > CurrentAccountId)
-                    return UserAccounts[CurrentAccountId];
-                else
-                    return null;
-            }
-            set
-            {
-                CurrentAccountId = UserAccounts.IndexOf(UserAccounts.First(item => item.ConsumerKey == value.ConsumerKey && item.Token == value.Token));
-            }
+            get { return Encrypt(Password); }
+            set { Password = Decrypt(value); }
+        }
+        [XmlIgnore]
+        public string TLPassword = "";
+        public string TLEncryptPassword
+        {
+            get { return Encrypt(TLPassword); }
+            set { TLPassword = Decrypt(value); }
         }
 
+        public string Token = "";
+        [XmlIgnore]
+        public string TokenSecret = "";
+        public string EncryptTokenSecret
+        {
+            get { return Encrypt(TokenSecret); }
+            set { TokenSecret = Decrypt(value); }
+        }
+        public string TLToken = "";
+        [XmlIgnore]
+        public string TLTokenSecret = "";
+        public string TLEncryptTokenSecret
+        {
+            get { return Encrypt(TLTokenSecret); }
+            set { TLTokenSecret = Decrypt(value); }
+        }
+
+        public string ConsumerKey = "";
+        public string ConsumerSecret = "";
+        public string Tag = "";
+        public string TLConsumerKey = "";
+        public string TLConsumerSecret = "";
+        public string TLTag = "";
+
+        private string Encrypt(string password)
+        {
+            if (String.IsNullOrEmpty(password)) password = "";
+            if (password.Length > 0)
+            {
+                try
+                {
+                    return MyCommon.EncryptString(password);
+                }
+                catch (Exception)
+                {
+                    return "";
+                }
+            }
+            else
+            {
+                return "";
+            }
+        }
+        private string Decrypt(string password)
+        {
+            if (String.IsNullOrEmpty(password)) password = "";
+            if (password.Length > 0)
+            {
+                try
+                {
+                    password = MyCommon.DecryptString(password);
+                }
+                catch (Exception)
+                {
+                    password = "";
+                }
+            }
+            return password;
+        }
+
+        public long UserId = 0;
+        public long TLUserId = 0;
         public List<string> TabList;
         public int TimelinePeriod = 90;
         public int ReplyPeriod = 180;
@@ -86,7 +145,6 @@ namespace OpenTween
         public MyCommon.EVENTTYPE IsMyEventNotifyFlag = MyCommon.EVENTTYPE.All;
         public bool ForceEventNotify = false;
         public bool FavEventUnread = true;
-        public string TranslateLanguage = Properties.Resources.TranslateDefaultLanguage;
         public string EventSoundFile = "";
         public bool PlaySound = false;
         public bool UnreadManage = true;
@@ -102,12 +160,6 @@ namespace OpenTween
         public bool CloseToExit = false;
         public MyCommon.DispTitleEnum DispLatestPost = MyCommon.DispTitleEnum.Post;
         public bool SortOrderLock = false;
-
-        /// <summary>
-        /// タブを下部に表示するかどうか
-        /// </summary>
-        public bool ViewTabBottom = true;
-
         public bool TinyUrlResolve = true;
         public bool ShortUrlForceResolve = false;
         public bool PeriodAdjust = true;
@@ -115,22 +167,19 @@ namespace OpenTween
         public bool StartupFollowers = true;
         public bool RestrictFavCheck = false;
         public bool AlwaysTop = false;
-        public string CultureCode = "";
         public bool UrlConvertAuto = false;
         public int SortColumn = 3;
         public int SortOrder = 1;
         public bool IsMonospace = false;
         public bool ReadOldPosts = false;
         public bool UseSsl = true;
-        public string Language = "OS";
-        public bool Nicoms = false;
         public List<string> HashTags = new List<string>();
         public string HashSelected = "";
         public bool HashIsPermanent = false;
         public bool HashIsHead = false;
         public bool HashIsNotAddToAtReply = true;
         public bool PreviewEnable = true;
-        public MyCommon.UrlConverter AutoShortUrlFirst = MyCommon.UrlConverter.Uxnu;
+
         public bool UseUnreadStyle = true;
         public string DateTimeFormat = "yyyy/MM/dd H:mm:ss";
         public int DefaultTimeOut = 20;
@@ -138,11 +187,8 @@ namespace OpenTween
         public bool LimitBalloon = false;
         public bool TabIconDisp = true;
         public MyCommon.REPLY_ICONSTATE ReplyIconState = MyCommon.REPLY_ICONSTATE.StaticIcon;
-        public bool WideSpaceConvert = true;
         public bool ReadOwnPost = false;
         public bool GetFav = true;
-        public string BilyUser = "";
-        public string BitlyPwd = "";
         public bool ShowGrid = false;
         public bool UseAtIdSupplement = true;
         public bool UseHashSupplement = true;
@@ -177,87 +223,85 @@ namespace OpenTween
         public int MapThumbnailZoom = 15;
         public MapProvider MapThumbnailProvider = MapProvider.OpenStreetMap;
         public bool IsListsIncludeRts = false;
+        public long GAFirst = 0;
+        public long GALast = 0;
         public bool TabMouseLock = false;
         public bool IsRemoveSameEvent = false;
         public bool IsUseNotifyGrowl = false;
+
         public bool SpaceToFocusTimeline = true;
         public bool AutoCutTweet = false;
+        public bool AutoAddZenkakuSpace = false;
+        public bool ShowStolenTweetWithColor = false;
+
+        // 隠し
+        public bool ShowDeleted = false;
+
+        public int AutoRetryInterval = 10000;
     }
 
-    public class UserAccount : IEquatable<UserAccount>
+    public class UserAccount
     {
-        public string ConsumerKey;
-        public string ConsumerSecret;
-        public string Token;
-        public string TokenSecret;
-        public long UserId;
-        public string Username;
-        public string ProfileImageUrl;
-
+        public string Username = "";
+        public long UserId = 0;
+        public long GAFirst = 0;
+        public long GALast = 0;
+        public string Token = "";
+        [XmlIgnore]
+        public string TokenSecret = "";
+        public string EncryptTokenSecret
+        {
+            get { return Encrypt(TokenSecret); }
+            set { TokenSecret = Decrypt(value); }
+        }
+        public string ConsumerKey = "";
+        public string ConsumerSecret = "";
+        public string Tag = "";
+        private string Encrypt(string password)
+        {
+            if (String.IsNullOrEmpty(password)) password = "";
+            if (password.Length > 0)
+            {
+                try
+                {
+                    return MyCommon.EncryptString(password);
+                }
+                catch (Exception)
+                {
+                    return "";
+                }
+            }
+            else
+            {
+                return "";
+            }
+        }
+        private string Decrypt(string password)
+        {
+            if (String.IsNullOrEmpty(password)) password = "";
+            if (password.Length > 0)
+            {
+                try
+                {
+                    password = MyCommon.DecryptString(password);
+                }
+                catch (Exception)
+                {
+                    password = "";
+                }
+            }
+            return password;
+        }
         public override string ToString()
         {
-            return this.Username;
-        }
-
-        [XmlIgnore]
-        public OAuthCredential Credential
-        {
-            get
+            if (string.IsNullOrEmpty(this.Tag))
             {
-                return new OAuthCredential(ConsumerKey, ConsumerSecret, Token, TokenSecret);
+                return this.Username;
             }
-        }
-
-        [XmlIgnore]
-        private Image _ProfileImage;
-        [XmlIgnore]
-        public Image ProfileImage
-        {
-            get
+            else
             {
-                if (_ProfileImage == null)
-                    return (_ProfileImage = new HttpVarious().GetImage(ProfileImageUrl));
-                else
-                    return _ProfileImage;
+                return this.Username + " - " + this.Tag;
             }
-        }
-
-        // serialize
-        private UserAccount() { }
-
-        public UserAccount(OAuthCredential credenatial, long userId, string username, string profileImageUrl)
-            : this(credenatial.Consumer.Key, credenatial.Consumer.Secret, credenatial.Token, credenatial.TokenSecret, userId, username, profileImageUrl)
-        { }
-
-        public UserAccount(string consumerKey, string consumerSecret, string token, string tokenSecret, long userId, string username, string profileImageUrl)
-        {
-            this.ConsumerKey = consumerKey;
-            this.ConsumerSecret = consumerSecret;
-            this.Token = token;
-            this.TokenSecret = tokenSecret;
-            this.UserId = userId;
-            this.Username = username;
-            this.ProfileImageUrl = profileImageUrl;
-        }
-
-        public bool Equals(UserAccount other)
-        {
-            return other != null &&
-                this.ConsumerKey == other.ConsumerKey &&
-                this.ConsumerSecret == other.ConsumerSecret &&
-                this.Token == other.Token &&
-                this.TokenSecret == other.TokenSecret &&
-                this.UserId == other.UserId;
-        }
-
-        public override int GetHashCode()
-        {
-            return
-                this.ConsumerKey.GetHashCode() ^
-                this.ConsumerSecret.GetHashCode() ^
-                this.Token.GetHashCode() ^
-                this.TokenSecret.GetHashCode() ^
-                this.UserId.GetHashCode();
         }
     }
 }

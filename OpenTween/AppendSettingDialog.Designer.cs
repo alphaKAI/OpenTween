@@ -32,12 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppendSettingDialog));
             this.SplitContainer1 = new System.Windows.Forms.SplitContainer();
             this.TreeViewSetting = new System.Windows.Forms.TreeView();
-            this.BasedPanel = new System.Windows.Forms.Panel();
-            this.UserAccountsCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.AddAccountButton = new System.Windows.Forms.Button();
-            this.StartAuthButton = new System.Windows.Forms.Button();
-            this.AuthClearButton = new System.Windows.Forms.Button();
-            this.Label4 = new System.Windows.Forms.Label();
             this.CooperatePanel = new System.Windows.Forms.Panel();
             this.IsPreviewFoursquareCheckBox = new System.Windows.Forms.CheckBox();
             this.MapThumbnailGroupBox = new System.Windows.Forms.GroupBox();
@@ -51,14 +45,9 @@
             this.Label40 = new System.Windows.Forms.Label();
             this.Label39 = new System.Windows.Forms.Label();
             this.UserAppointUrlText = new System.Windows.Forms.TextBox();
-            this.ComboBoxTranslateLanguage = new System.Windows.Forms.ComboBox();
-            this.Label29 = new System.Windows.Forms.Label();
-            this.CheckNicoms = new System.Windows.Forms.CheckBox();
-            this.StartupPanel = new System.Windows.Forms.Panel();
-            this.StartupReaded = new System.Windows.Forms.CheckBox();
-            this.CheckStartupFollowers = new System.Windows.Forms.CheckBox();
-            this.CheckStartupVersion = new System.Windows.Forms.CheckBox();
-            this.chkGetFav = new System.Windows.Forms.CheckBox();
+            this.ShortUrlPanel = new System.Windows.Forms.Panel();
+            this.CheckForceResolve = new System.Windows.Forms.CheckBox();
+            this.CheckTinyURL = new System.Windows.Forms.CheckBox();
             this.PreviewPanel = new System.Windows.Forms.Panel();
             this.Label2 = new System.Windows.Forms.Label();
             this.IsNotifyUseGrowlCheckBox = new System.Windows.Forms.CheckBox();
@@ -67,9 +56,6 @@
             this.ChkNewMentionsBlink = new System.Windows.Forms.CheckBox();
             this.chkTabIconDisp = new System.Windows.Forms.CheckBox();
             this.CheckPreviewEnable = new System.Windows.Forms.CheckBox();
-            this.Label81 = new System.Windows.Forms.Label();
-            this.LanguageCombo = new System.Windows.Forms.ComboBox();
-            this.Label13 = new System.Windows.Forms.Label();
             this.CheckAlwaysTop = new System.Windows.Forms.CheckBox();
             this.CheckMonospace = new System.Windows.Forms.CheckBox();
             this.CheckBalloonLimit = new System.Windows.Forms.CheckBox();
@@ -80,14 +66,99 @@
             this.CheckDispUsername = new System.Windows.Forms.CheckBox();
             this.CheckBox3 = new System.Windows.Forms.CheckBox();
             this.TweetActPanel = new System.Windows.Forms.Panel();
+            this.numericAutoRetryInterval = new System.Windows.Forms.TextBox();
+            this.labelAutoRetryInterval = new System.Windows.Forms.Label();
             this.CheckHashSupple = new System.Windows.Forms.CheckBox();
             this.CheckAtIdSupple = new System.Windows.Forms.CheckBox();
             this.ComboBoxPostKeySelect = new System.Windows.Forms.ComboBox();
             this.Label27 = new System.Windows.Forms.Label();
             this.CheckRetweetNoConfirm = new System.Windows.Forms.CheckBox();
             this.Label12 = new System.Windows.Forms.Label();
-            this.CheckUseRecommendStatus = new System.Windows.Forms.CheckBox();
             this.StatusText = new System.Windows.Forms.TextBox();
+            this.FontPanel = new System.Windows.Forms.Panel();
+            this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnStolen = new System.Windows.Forms.Button();
+            this.lblStolen = new System.Windows.Forms.Label();
+            this.Label1 = new System.Windows.Forms.Label();
+            this.btnRetweet = new System.Windows.Forms.Button();
+            this.lblRetweet = new System.Windows.Forms.Label();
+            this.Label80 = new System.Windows.Forms.Label();
+            this.ButtonBackToDefaultFontColor = new System.Windows.Forms.Button();
+            this.btnDetailLink = new System.Windows.Forms.Button();
+            this.lblDetailLink = new System.Windows.Forms.Label();
+            this.Label18 = new System.Windows.Forms.Label();
+            this.btnUnread = new System.Windows.Forms.Button();
+            this.lblUnread = new System.Windows.Forms.Label();
+            this.Label20 = new System.Windows.Forms.Label();
+            this.btnDetailBack = new System.Windows.Forms.Button();
+            this.lblDetailBackcolor = new System.Windows.Forms.Label();
+            this.Label37 = new System.Windows.Forms.Label();
+            this.btnDetail = new System.Windows.Forms.Button();
+            this.lblDetail = new System.Windows.Forms.Label();
+            this.Label26 = new System.Windows.Forms.Label();
+            this.btnOWL = new System.Windows.Forms.Button();
+            this.lblOWL = new System.Windows.Forms.Label();
+            this.Label24 = new System.Windows.Forms.Label();
+            this.btnFav = new System.Windows.Forms.Button();
+            this.lblFav = new System.Windows.Forms.Label();
+            this.Label22 = new System.Windows.Forms.Label();
+            this.btnListFont = new System.Windows.Forms.Button();
+            this.lblListFont = new System.Windows.Forms.Label();
+            this.Label61 = new System.Windows.Forms.Label();
+            this.FontPanel2 = new System.Windows.Forms.Panel();
+            this.GroupBox5 = new System.Windows.Forms.GroupBox();
+            this.Label65 = new System.Windows.Forms.Label();
+            this.Label52 = new System.Windows.Forms.Label();
+            this.Label49 = new System.Windows.Forms.Label();
+            this.Label9 = new System.Windows.Forms.Label();
+            this.Label14 = new System.Windows.Forms.Label();
+            this.Label16 = new System.Windows.Forms.Label();
+            this.Label32 = new System.Windows.Forms.Label();
+            this.Label34 = new System.Windows.Forms.Label();
+            this.Label36 = new System.Windows.Forms.Label();
+            this.btnInputFont = new System.Windows.Forms.Button();
+            this.btnInputBackcolor = new System.Windows.Forms.Button();
+            this.btnAtTo = new System.Windows.Forms.Button();
+            this.btnListBack = new System.Windows.Forms.Button();
+            this.btnAtFromTarget = new System.Windows.Forms.Button();
+            this.btnAtTarget = new System.Windows.Forms.Button();
+            this.btnTarget = new System.Windows.Forms.Button();
+            this.btnAtSelf = new System.Windows.Forms.Button();
+            this.btnSelf = new System.Windows.Forms.Button();
+            this.lblInputFont = new System.Windows.Forms.Label();
+            this.lblInputBackcolor = new System.Windows.Forms.Label();
+            this.lblAtTo = new System.Windows.Forms.Label();
+            this.lblListBackcolor = new System.Windows.Forms.Label();
+            this.lblAtFromTarget = new System.Windows.Forms.Label();
+            this.lblAtTarget = new System.Windows.Forms.Label();
+            this.lblTarget = new System.Windows.Forms.Label();
+            this.lblAtSelf = new System.Windows.Forms.Label();
+            this.lblSelf = new System.Windows.Forms.Label();
+            this.ButtonBackToDefaultFontColor2 = new System.Windows.Forms.Button();
+            this.BasedPanel = new System.Windows.Forms.Panel();
+            this.TLAuthUserCombo = new System.Windows.Forms.ComboBox();
+            this.labelAccountTimeLine = new System.Windows.Forms.Label();
+            this.groupBoxConsumerKey = new System.Windows.Forms.GroupBox();
+            this.labelConsumerKey = new System.Windows.Forms.Label();
+            this.TextBoxTag = new System.Windows.Forms.TextBox();
+            this.labelConsumerSecret = new System.Windows.Forms.Label();
+            this.TextBoxConsumerSecret = new System.Windows.Forms.TextBox();
+            this.labelTag = new System.Windows.Forms.Label();
+            this.TextBoxConsumerKey = new System.Windows.Forms.TextBox();
+            this.AuthUserCombo = new System.Windows.Forms.ComboBox();
+            this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.EmailText = new System.Windows.Forms.TextBox();
+            this.Label6 = new System.Windows.Forms.Label();
+            this.FollowCheckBox = new System.Windows.Forms.CheckBox();
+            this.CreateAccountButton = new System.Windows.Forms.Button();
+            this.StartAuthButton = new System.Windows.Forms.Button();
+            this.AuthClearButton = new System.Windows.Forms.Button();
+            this.Label4 = new System.Windows.Forms.Label();
+            this.StartupPanel = new System.Windows.Forms.Panel();
+            this.StartupReaded = new System.Windows.Forms.CheckBox();
+            this.CheckStartupFollowers = new System.Windows.Forms.CheckBox();
+            this.CheckStartupVersion = new System.Windows.Forms.CheckBox();
+            this.chkGetFav = new System.Windows.Forms.CheckBox();
             this.GetCountPanel = new System.Windows.Forms.Panel();
             this.ListTextCountApi = new System.Windows.Forms.TextBox();
             this.Label25 = new System.Windows.Forms.Label();
@@ -106,17 +177,6 @@
             this.TextCountApiReply = new System.Windows.Forms.TextBox();
             this.Label67 = new System.Windows.Forms.Label();
             this.TextCountApi = new System.Windows.Forms.TextBox();
-            this.ShortUrlPanel = new System.Windows.Forms.Panel();
-            this.ShortenTcoCheck = new System.Windows.Forms.CheckBox();
-            this.CheckForceResolve = new System.Windows.Forms.CheckBox();
-            this.CheckTinyURL = new System.Windows.Forms.CheckBox();
-            this.TextBitlyPw = new System.Windows.Forms.TextBox();
-            this.CheckAutoConvertUrl = new System.Windows.Forms.CheckBox();
-            this.Label71 = new System.Windows.Forms.Label();
-            this.ComboBoxAutoShortUrlFirst = new System.Windows.Forms.ComboBox();
-            this.Label76 = new System.Windows.Forms.Label();
-            this.Label77 = new System.Windows.Forms.Label();
-            this.TextBitlyId = new System.Windows.Forms.TextBox();
             this.TweetPrvPanel = new System.Windows.Forms.Panel();
             this.IsListsIncludeRtsCheckBox = new System.Windows.Forms.CheckBox();
             this.HideDuplicatedRetweetsCheck = new System.Windows.Forms.CheckBox();
@@ -128,7 +188,6 @@
             this.Label11 = new System.Windows.Forms.Label();
             this.IconSize = new System.Windows.Forms.ComboBox();
             this.TextBox3 = new System.Windows.Forms.TextBox();
-            this.CheckViewTabBottom = new System.Windows.Forms.CheckBox();
             this.CheckSortOrderLock = new System.Windows.Forms.CheckBox();
             this.CheckShowGrid = new System.Windows.Forms.CheckBox();
             this.chkUnreadStyle = new System.Windows.Forms.CheckBox();
@@ -218,82 +277,30 @@
             this.CheckCloseToExit = new System.Windows.Forms.CheckBox();
             this.CheckMinimizeToTray = new System.Windows.Forms.CheckBox();
             this.CheckReadOldPosts = new System.Windows.Forms.CheckBox();
-            this.FontPanel = new System.Windows.Forms.Panel();
-            this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnRetweet = new System.Windows.Forms.Button();
-            this.lblRetweet = new System.Windows.Forms.Label();
-            this.Label80 = new System.Windows.Forms.Label();
-            this.ButtonBackToDefaultFontColor = new System.Windows.Forms.Button();
-            this.btnDetailLink = new System.Windows.Forms.Button();
-            this.lblDetailLink = new System.Windows.Forms.Label();
-            this.Label18 = new System.Windows.Forms.Label();
-            this.btnUnread = new System.Windows.Forms.Button();
-            this.lblUnread = new System.Windows.Forms.Label();
-            this.Label20 = new System.Windows.Forms.Label();
-            this.btnDetailBack = new System.Windows.Forms.Button();
-            this.lblDetailBackcolor = new System.Windows.Forms.Label();
-            this.Label37 = new System.Windows.Forms.Label();
-            this.btnDetail = new System.Windows.Forms.Button();
-            this.lblDetail = new System.Windows.Forms.Label();
-            this.Label26 = new System.Windows.Forms.Label();
-            this.btnOWL = new System.Windows.Forms.Button();
-            this.lblOWL = new System.Windows.Forms.Label();
-            this.Label24 = new System.Windows.Forms.Label();
-            this.btnFav = new System.Windows.Forms.Button();
-            this.lblFav = new System.Windows.Forms.Label();
-            this.Label22 = new System.Windows.Forms.Label();
-            this.btnListFont = new System.Windows.Forms.Button();
-            this.lblListFont = new System.Windows.Forms.Label();
-            this.Label61 = new System.Windows.Forms.Label();
-            this.FontPanel2 = new System.Windows.Forms.Panel();
-            this.GroupBox5 = new System.Windows.Forms.GroupBox();
-            this.Label65 = new System.Windows.Forms.Label();
-            this.Label52 = new System.Windows.Forms.Label();
-            this.Label49 = new System.Windows.Forms.Label();
-            this.Label9 = new System.Windows.Forms.Label();
-            this.Label14 = new System.Windows.Forms.Label();
-            this.Label16 = new System.Windows.Forms.Label();
-            this.Label32 = new System.Windows.Forms.Label();
-            this.Label34 = new System.Windows.Forms.Label();
-            this.Label36 = new System.Windows.Forms.Label();
-            this.btnInputFont = new System.Windows.Forms.Button();
-            this.btnInputBackcolor = new System.Windows.Forms.Button();
-            this.btnAtTo = new System.Windows.Forms.Button();
-            this.btnListBack = new System.Windows.Forms.Button();
-            this.btnAtFromTarget = new System.Windows.Forms.Button();
-            this.btnAtTarget = new System.Windows.Forms.Button();
-            this.btnTarget = new System.Windows.Forms.Button();
-            this.btnAtSelf = new System.Windows.Forms.Button();
-            this.btnSelf = new System.Windows.Forms.Button();
-            this.lblInputFont = new System.Windows.Forms.Label();
-            this.lblInputBackcolor = new System.Windows.Forms.Label();
-            this.lblAtTo = new System.Windows.Forms.Label();
-            this.lblListBackcolor = new System.Windows.Forms.Label();
-            this.lblAtFromTarget = new System.Windows.Forms.Label();
-            this.lblAtTarget = new System.Windows.Forms.Label();
-            this.lblTarget = new System.Windows.Forms.Label();
-            this.lblAtSelf = new System.Windows.Forms.Label();
-            this.lblSelf = new System.Windows.Forms.Label();
-            this.ButtonBackToDefaultFontColor2 = new System.Windows.Forms.Button();
-            this.UserAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Save = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
             this.ColorDialog1 = new System.Windows.Forms.ColorDialog();
             this.FontDialog1 = new System.Windows.Forms.FontDialog();
             this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.UpdateAccountButton = new System.Windows.Forms.Button();
+            this.CheckUnfollowEvent = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer1)).BeginInit();
             this.SplitContainer1.Panel1.SuspendLayout();
             this.SplitContainer1.Panel2.SuspendLayout();
             this.SplitContainer1.SuspendLayout();
-            this.BasedPanel.SuspendLayout();
             this.CooperatePanel.SuspendLayout();
             this.MapThumbnailGroupBox.SuspendLayout();
-            this.StartupPanel.SuspendLayout();
+            this.ShortUrlPanel.SuspendLayout();
             this.PreviewPanel.SuspendLayout();
             this.TweetActPanel.SuspendLayout();
+            this.FontPanel.SuspendLayout();
+            this.GroupBox1.SuspendLayout();
+            this.FontPanel2.SuspendLayout();
+            this.GroupBox5.SuspendLayout();
+            this.BasedPanel.SuspendLayout();
+            this.groupBoxConsumerKey.SuspendLayout();
+            this.GroupBox2.SuspendLayout();
+            this.StartupPanel.SuspendLayout();
             this.GetCountPanel.SuspendLayout();
-            this.ShortUrlPanel.SuspendLayout();
             this.TweetPrvPanel.SuspendLayout();
             this.NotifyPanel.SuspendLayout();
             this.ProxyPanel.SuspendLayout();
@@ -301,11 +308,6 @@
             this.GetPeriodPanel.SuspendLayout();
             this.ActionPanel.SuspendLayout();
             this.GroupBox3.SuspendLayout();
-            this.FontPanel.SuspendLayout();
-            this.GroupBox1.SuspendLayout();
-            this.FontPanel2.SuspendLayout();
-            this.GroupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserAccountBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // SplitContainer1
@@ -320,21 +322,21 @@
             // SplitContainer1.Panel2
             // 
             this.SplitContainer1.Panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.SplitContainer1.Panel2.Controls.Add(this.BasedPanel);
-            this.SplitContainer1.Panel2.Controls.Add(this.CooperatePanel);
-            this.SplitContainer1.Panel2.Controls.Add(this.StartupPanel);
-            this.SplitContainer1.Panel2.Controls.Add(this.PreviewPanel);
-            this.SplitContainer1.Panel2.Controls.Add(this.TweetActPanel);
-            this.SplitContainer1.Panel2.Controls.Add(this.GetCountPanel);
-            this.SplitContainer1.Panel2.Controls.Add(this.ShortUrlPanel);
-            this.SplitContainer1.Panel2.Controls.Add(this.TweetPrvPanel);
             this.SplitContainer1.Panel2.Controls.Add(this.NotifyPanel);
+            this.SplitContainer1.Panel2.Controls.Add(this.TweetActPanel);
+            this.SplitContainer1.Panel2.Controls.Add(this.CooperatePanel);
+            this.SplitContainer1.Panel2.Controls.Add(this.ShortUrlPanel);
+            this.SplitContainer1.Panel2.Controls.Add(this.PreviewPanel);
+            this.SplitContainer1.Panel2.Controls.Add(this.FontPanel);
+            this.SplitContainer1.Panel2.Controls.Add(this.FontPanel2);
+            this.SplitContainer1.Panel2.Controls.Add(this.BasedPanel);
+            this.SplitContainer1.Panel2.Controls.Add(this.StartupPanel);
+            this.SplitContainer1.Panel2.Controls.Add(this.GetCountPanel);
+            this.SplitContainer1.Panel2.Controls.Add(this.TweetPrvPanel);
             this.SplitContainer1.Panel2.Controls.Add(this.ProxyPanel);
             this.SplitContainer1.Panel2.Controls.Add(this.ConnectionPanel);
             this.SplitContainer1.Panel2.Controls.Add(this.GetPeriodPanel);
             this.SplitContainer1.Panel2.Controls.Add(this.ActionPanel);
-            this.SplitContainer1.Panel2.Controls.Add(this.FontPanel);
-            this.SplitContainer1.Panel2.Controls.Add(this.FontPanel2);
             this.SplitContainer1.TabStop = false;
             // 
             // TreeViewSetting
@@ -353,58 +355,12 @@
             this.TreeViewSetting.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.TreeViewSetting_BeforeSelect);
             this.TreeViewSetting.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeViewSetting_AfterSelect);
             // 
-            // BasedPanel
-            // 
-            this.BasedPanel.Controls.Add(this.UpdateAccountButton);
-            this.BasedPanel.Controls.Add(this.UserAccountsCheckedListBox);
-            this.BasedPanel.Controls.Add(this.AddAccountButton);
-            this.BasedPanel.Controls.Add(this.StartAuthButton);
-            this.BasedPanel.Controls.Add(this.AuthClearButton);
-            this.BasedPanel.Controls.Add(this.Label4);
-            resources.ApplyResources(this.BasedPanel, "BasedPanel");
-            this.BasedPanel.Name = "BasedPanel";
-            // 
-            // UserAccountsCheckedListBox
-            // 
-            this.UserAccountsCheckedListBox.FormattingEnabled = true;
-            resources.ApplyResources(this.UserAccountsCheckedListBox, "UserAccountsCheckedListBox");
-            this.UserAccountsCheckedListBox.Name = "UserAccountsCheckedListBox";
-            // 
-            // AddAccountButton
-            // 
-            resources.ApplyResources(this.AddAccountButton, "AddAccountButton");
-            this.AddAccountButton.Name = "AddAccountButton";
-            this.AddAccountButton.UseVisualStyleBackColor = true;
-            this.AddAccountButton.Click += new System.EventHandler(this.AddAccountButton_Click);
-            // 
-            // StartAuthButton
-            // 
-            resources.ApplyResources(this.StartAuthButton, "StartAuthButton");
-            this.StartAuthButton.Name = "StartAuthButton";
-            this.StartAuthButton.UseVisualStyleBackColor = true;
-            this.StartAuthButton.Click += new System.EventHandler(this.StartAuthButton_Click);
-            // 
-            // AuthClearButton
-            // 
-            resources.ApplyResources(this.AuthClearButton, "AuthClearButton");
-            this.AuthClearButton.Name = "AuthClearButton";
-            this.AuthClearButton.UseVisualStyleBackColor = true;
-            this.AuthClearButton.Click += new System.EventHandler(this.AuthClearButton_Click);
-            // 
-            // Label4
-            // 
-            resources.ApplyResources(this.Label4, "Label4");
-            this.Label4.Name = "Label4";
-            // 
             // CooperatePanel
             // 
             this.CooperatePanel.Controls.Add(this.IsPreviewFoursquareCheckBox);
             this.CooperatePanel.Controls.Add(this.MapThumbnailGroupBox);
             this.CooperatePanel.Controls.Add(this.Label39);
             this.CooperatePanel.Controls.Add(this.UserAppointUrlText);
-            this.CooperatePanel.Controls.Add(this.ComboBoxTranslateLanguage);
-            this.CooperatePanel.Controls.Add(this.Label29);
-            this.CooperatePanel.Controls.Add(this.CheckNicoms);
             resources.ApplyResources(this.CooperatePanel, "CooperatePanel");
             this.CooperatePanel.Name = "CooperatePanel";
             // 
@@ -484,181 +440,24 @@
             this.UserAppointUrlText.Name = "UserAppointUrlText";
             this.UserAppointUrlText.Validating += new System.ComponentModel.CancelEventHandler(this.UserAppointUrlText_Validating);
             // 
-            // ComboBoxTranslateLanguage
+            // ShortUrlPanel
             // 
-            this.ComboBoxTranslateLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBoxTranslateLanguage.FormattingEnabled = true;
-            this.ComboBoxTranslateLanguage.Items.AddRange(new object[] {
-            resources.GetString("ComboBoxTranslateLanguage.Items"),
-            resources.GetString("ComboBoxTranslateLanguage.Items1"),
-            resources.GetString("ComboBoxTranslateLanguage.Items2"),
-            resources.GetString("ComboBoxTranslateLanguage.Items3"),
-            resources.GetString("ComboBoxTranslateLanguage.Items4"),
-            resources.GetString("ComboBoxTranslateLanguage.Items5"),
-            resources.GetString("ComboBoxTranslateLanguage.Items6"),
-            resources.GetString("ComboBoxTranslateLanguage.Items7"),
-            resources.GetString("ComboBoxTranslateLanguage.Items8"),
-            resources.GetString("ComboBoxTranslateLanguage.Items9"),
-            resources.GetString("ComboBoxTranslateLanguage.Items10"),
-            resources.GetString("ComboBoxTranslateLanguage.Items11"),
-            resources.GetString("ComboBoxTranslateLanguage.Items12"),
-            resources.GetString("ComboBoxTranslateLanguage.Items13"),
-            resources.GetString("ComboBoxTranslateLanguage.Items14"),
-            resources.GetString("ComboBoxTranslateLanguage.Items15"),
-            resources.GetString("ComboBoxTranslateLanguage.Items16"),
-            resources.GetString("ComboBoxTranslateLanguage.Items17"),
-            resources.GetString("ComboBoxTranslateLanguage.Items18"),
-            resources.GetString("ComboBoxTranslateLanguage.Items19"),
-            resources.GetString("ComboBoxTranslateLanguage.Items20"),
-            resources.GetString("ComboBoxTranslateLanguage.Items21"),
-            resources.GetString("ComboBoxTranslateLanguage.Items22"),
-            resources.GetString("ComboBoxTranslateLanguage.Items23"),
-            resources.GetString("ComboBoxTranslateLanguage.Items24"),
-            resources.GetString("ComboBoxTranslateLanguage.Items25"),
-            resources.GetString("ComboBoxTranslateLanguage.Items26"),
-            resources.GetString("ComboBoxTranslateLanguage.Items27"),
-            resources.GetString("ComboBoxTranslateLanguage.Items28"),
-            resources.GetString("ComboBoxTranslateLanguage.Items29"),
-            resources.GetString("ComboBoxTranslateLanguage.Items30"),
-            resources.GetString("ComboBoxTranslateLanguage.Items31"),
-            resources.GetString("ComboBoxTranslateLanguage.Items32"),
-            resources.GetString("ComboBoxTranslateLanguage.Items33"),
-            resources.GetString("ComboBoxTranslateLanguage.Items34"),
-            resources.GetString("ComboBoxTranslateLanguage.Items35"),
-            resources.GetString("ComboBoxTranslateLanguage.Items36"),
-            resources.GetString("ComboBoxTranslateLanguage.Items37"),
-            resources.GetString("ComboBoxTranslateLanguage.Items38"),
-            resources.GetString("ComboBoxTranslateLanguage.Items39"),
-            resources.GetString("ComboBoxTranslateLanguage.Items40"),
-            resources.GetString("ComboBoxTranslateLanguage.Items41"),
-            resources.GetString("ComboBoxTranslateLanguage.Items42"),
-            resources.GetString("ComboBoxTranslateLanguage.Items43"),
-            resources.GetString("ComboBoxTranslateLanguage.Items44"),
-            resources.GetString("ComboBoxTranslateLanguage.Items45"),
-            resources.GetString("ComboBoxTranslateLanguage.Items46"),
-            resources.GetString("ComboBoxTranslateLanguage.Items47"),
-            resources.GetString("ComboBoxTranslateLanguage.Items48"),
-            resources.GetString("ComboBoxTranslateLanguage.Items49"),
-            resources.GetString("ComboBoxTranslateLanguage.Items50"),
-            resources.GetString("ComboBoxTranslateLanguage.Items51"),
-            resources.GetString("ComboBoxTranslateLanguage.Items52"),
-            resources.GetString("ComboBoxTranslateLanguage.Items53"),
-            resources.GetString("ComboBoxTranslateLanguage.Items54"),
-            resources.GetString("ComboBoxTranslateLanguage.Items55"),
-            resources.GetString("ComboBoxTranslateLanguage.Items56"),
-            resources.GetString("ComboBoxTranslateLanguage.Items57"),
-            resources.GetString("ComboBoxTranslateLanguage.Items58"),
-            resources.GetString("ComboBoxTranslateLanguage.Items59"),
-            resources.GetString("ComboBoxTranslateLanguage.Items60"),
-            resources.GetString("ComboBoxTranslateLanguage.Items61"),
-            resources.GetString("ComboBoxTranslateLanguage.Items62"),
-            resources.GetString("ComboBoxTranslateLanguage.Items63"),
-            resources.GetString("ComboBoxTranslateLanguage.Items64"),
-            resources.GetString("ComboBoxTranslateLanguage.Items65"),
-            resources.GetString("ComboBoxTranslateLanguage.Items66"),
-            resources.GetString("ComboBoxTranslateLanguage.Items67"),
-            resources.GetString("ComboBoxTranslateLanguage.Items68"),
-            resources.GetString("ComboBoxTranslateLanguage.Items69"),
-            resources.GetString("ComboBoxTranslateLanguage.Items70"),
-            resources.GetString("ComboBoxTranslateLanguage.Items71"),
-            resources.GetString("ComboBoxTranslateLanguage.Items72"),
-            resources.GetString("ComboBoxTranslateLanguage.Items73"),
-            resources.GetString("ComboBoxTranslateLanguage.Items74"),
-            resources.GetString("ComboBoxTranslateLanguage.Items75"),
-            resources.GetString("ComboBoxTranslateLanguage.Items76"),
-            resources.GetString("ComboBoxTranslateLanguage.Items77"),
-            resources.GetString("ComboBoxTranslateLanguage.Items78"),
-            resources.GetString("ComboBoxTranslateLanguage.Items79"),
-            resources.GetString("ComboBoxTranslateLanguage.Items80"),
-            resources.GetString("ComboBoxTranslateLanguage.Items81"),
-            resources.GetString("ComboBoxTranslateLanguage.Items82"),
-            resources.GetString("ComboBoxTranslateLanguage.Items83"),
-            resources.GetString("ComboBoxTranslateLanguage.Items84"),
-            resources.GetString("ComboBoxTranslateLanguage.Items85"),
-            resources.GetString("ComboBoxTranslateLanguage.Items86"),
-            resources.GetString("ComboBoxTranslateLanguage.Items87"),
-            resources.GetString("ComboBoxTranslateLanguage.Items88"),
-            resources.GetString("ComboBoxTranslateLanguage.Items89"),
-            resources.GetString("ComboBoxTranslateLanguage.Items90"),
-            resources.GetString("ComboBoxTranslateLanguage.Items91"),
-            resources.GetString("ComboBoxTranslateLanguage.Items92"),
-            resources.GetString("ComboBoxTranslateLanguage.Items93"),
-            resources.GetString("ComboBoxTranslateLanguage.Items94"),
-            resources.GetString("ComboBoxTranslateLanguage.Items95"),
-            resources.GetString("ComboBoxTranslateLanguage.Items96"),
-            resources.GetString("ComboBoxTranslateLanguage.Items97"),
-            resources.GetString("ComboBoxTranslateLanguage.Items98"),
-            resources.GetString("ComboBoxTranslateLanguage.Items99"),
-            resources.GetString("ComboBoxTranslateLanguage.Items100"),
-            resources.GetString("ComboBoxTranslateLanguage.Items101"),
-            resources.GetString("ComboBoxTranslateLanguage.Items102"),
-            resources.GetString("ComboBoxTranslateLanguage.Items103"),
-            resources.GetString("ComboBoxTranslateLanguage.Items104"),
-            resources.GetString("ComboBoxTranslateLanguage.Items105"),
-            resources.GetString("ComboBoxTranslateLanguage.Items106"),
-            resources.GetString("ComboBoxTranslateLanguage.Items107"),
-            resources.GetString("ComboBoxTranslateLanguage.Items108"),
-            resources.GetString("ComboBoxTranslateLanguage.Items109"),
-            resources.GetString("ComboBoxTranslateLanguage.Items110"),
-            resources.GetString("ComboBoxTranslateLanguage.Items111"),
-            resources.GetString("ComboBoxTranslateLanguage.Items112"),
-            resources.GetString("ComboBoxTranslateLanguage.Items113"),
-            resources.GetString("ComboBoxTranslateLanguage.Items114"),
-            resources.GetString("ComboBoxTranslateLanguage.Items115"),
-            resources.GetString("ComboBoxTranslateLanguage.Items116"),
-            resources.GetString("ComboBoxTranslateLanguage.Items117"),
-            resources.GetString("ComboBoxTranslateLanguage.Items118"),
-            resources.GetString("ComboBoxTranslateLanguage.Items119"),
-            resources.GetString("ComboBoxTranslateLanguage.Items120"),
-            resources.GetString("ComboBoxTranslateLanguage.Items121"),
-            resources.GetString("ComboBoxTranslateLanguage.Items122"),
-            resources.GetString("ComboBoxTranslateLanguage.Items123")});
-            resources.ApplyResources(this.ComboBoxTranslateLanguage, "ComboBoxTranslateLanguage");
-            this.ComboBoxTranslateLanguage.Name = "ComboBoxTranslateLanguage";
+            this.ShortUrlPanel.Controls.Add(this.CheckForceResolve);
+            this.ShortUrlPanel.Controls.Add(this.CheckTinyURL);
+            resources.ApplyResources(this.ShortUrlPanel, "ShortUrlPanel");
+            this.ShortUrlPanel.Name = "ShortUrlPanel";
             // 
-            // Label29
+            // CheckForceResolve
             // 
-            resources.ApplyResources(this.Label29, "Label29");
-            this.Label29.Name = "Label29";
+            resources.ApplyResources(this.CheckForceResolve, "CheckForceResolve");
+            this.CheckForceResolve.Name = "CheckForceResolve";
+            this.CheckForceResolve.UseVisualStyleBackColor = true;
             // 
-            // CheckNicoms
+            // CheckTinyURL
             // 
-            resources.ApplyResources(this.CheckNicoms, "CheckNicoms");
-            this.CheckNicoms.Name = "CheckNicoms";
-            this.CheckNicoms.UseVisualStyleBackColor = true;
-            // 
-            // StartupPanel
-            // 
-            this.StartupPanel.Controls.Add(this.StartupReaded);
-            this.StartupPanel.Controls.Add(this.CheckStartupFollowers);
-            this.StartupPanel.Controls.Add(this.CheckStartupVersion);
-            this.StartupPanel.Controls.Add(this.chkGetFav);
-            resources.ApplyResources(this.StartupPanel, "StartupPanel");
-            this.StartupPanel.Name = "StartupPanel";
-            // 
-            // StartupReaded
-            // 
-            resources.ApplyResources(this.StartupReaded, "StartupReaded");
-            this.StartupReaded.Name = "StartupReaded";
-            this.StartupReaded.UseVisualStyleBackColor = true;
-            // 
-            // CheckStartupFollowers
-            // 
-            resources.ApplyResources(this.CheckStartupFollowers, "CheckStartupFollowers");
-            this.CheckStartupFollowers.Name = "CheckStartupFollowers";
-            this.CheckStartupFollowers.UseVisualStyleBackColor = true;
-            // 
-            // CheckStartupVersion
-            // 
-            resources.ApplyResources(this.CheckStartupVersion, "CheckStartupVersion");
-            this.CheckStartupVersion.Name = "CheckStartupVersion";
-            this.CheckStartupVersion.UseVisualStyleBackColor = true;
-            // 
-            // chkGetFav
-            // 
-            resources.ApplyResources(this.chkGetFav, "chkGetFav");
-            this.chkGetFav.Name = "chkGetFav";
-            this.chkGetFav.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.CheckTinyURL, "CheckTinyURL");
+            this.CheckTinyURL.Name = "CheckTinyURL";
+            this.CheckTinyURL.UseVisualStyleBackColor = true;
             // 
             // PreviewPanel
             // 
@@ -669,9 +468,6 @@
             this.PreviewPanel.Controls.Add(this.ChkNewMentionsBlink);
             this.PreviewPanel.Controls.Add(this.chkTabIconDisp);
             this.PreviewPanel.Controls.Add(this.CheckPreviewEnable);
-            this.PreviewPanel.Controls.Add(this.Label81);
-            this.PreviewPanel.Controls.Add(this.LanguageCombo);
-            this.PreviewPanel.Controls.Add(this.Label13);
             this.PreviewPanel.Controls.Add(this.CheckAlwaysTop);
             this.PreviewPanel.Controls.Add(this.CheckMonospace);
             this.PreviewPanel.Controls.Add(this.CheckBalloonLimit);
@@ -729,30 +525,6 @@
             resources.ApplyResources(this.CheckPreviewEnable, "CheckPreviewEnable");
             this.CheckPreviewEnable.Name = "CheckPreviewEnable";
             this.CheckPreviewEnable.UseVisualStyleBackColor = true;
-            // 
-            // Label81
-            // 
-            resources.ApplyResources(this.Label81, "Label81");
-            this.Label81.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Label81.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Label81.Name = "Label81";
-            // 
-            // LanguageCombo
-            // 
-            this.LanguageCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.LanguageCombo.FormattingEnabled = true;
-            this.LanguageCombo.Items.AddRange(new object[] {
-            resources.GetString("LanguageCombo.Items"),
-            resources.GetString("LanguageCombo.Items1"),
-            resources.GetString("LanguageCombo.Items2"),
-            resources.GetString("LanguageCombo.Items3")});
-            resources.ApplyResources(this.LanguageCombo, "LanguageCombo");
-            this.LanguageCombo.Name = "LanguageCombo";
-            // 
-            // Label13
-            // 
-            resources.ApplyResources(this.Label13, "Label13");
-            this.Label13.Name = "Label13";
             // 
             // CheckAlwaysTop
             // 
@@ -823,16 +595,27 @@
             // 
             // TweetActPanel
             // 
+            this.TweetActPanel.Controls.Add(this.numericAutoRetryInterval);
+            this.TweetActPanel.Controls.Add(this.labelAutoRetryInterval);
             this.TweetActPanel.Controls.Add(this.CheckHashSupple);
             this.TweetActPanel.Controls.Add(this.CheckAtIdSupple);
             this.TweetActPanel.Controls.Add(this.ComboBoxPostKeySelect);
             this.TweetActPanel.Controls.Add(this.Label27);
             this.TweetActPanel.Controls.Add(this.CheckRetweetNoConfirm);
             this.TweetActPanel.Controls.Add(this.Label12);
-            this.TweetActPanel.Controls.Add(this.CheckUseRecommendStatus);
             this.TweetActPanel.Controls.Add(this.StatusText);
             resources.ApplyResources(this.TweetActPanel, "TweetActPanel");
             this.TweetActPanel.Name = "TweetActPanel";
+            // 
+            // numericAutoRetryInterval
+            // 
+            resources.ApplyResources(this.numericAutoRetryInterval, "numericAutoRetryInterval");
+            this.numericAutoRetryInterval.Name = "numericAutoRetryInterval";
+            // 
+            // labelAutoRetryInterval
+            // 
+            resources.ApplyResources(this.labelAutoRetryInterval, "labelAutoRetryInterval");
+            this.labelAutoRetryInterval.Name = "labelAutoRetryInterval";
             // 
             // CheckHashSupple
             // 
@@ -873,17 +656,589 @@
             resources.ApplyResources(this.Label12, "Label12");
             this.Label12.Name = "Label12";
             // 
-            // CheckUseRecommendStatus
-            // 
-            resources.ApplyResources(this.CheckUseRecommendStatus, "CheckUseRecommendStatus");
-            this.CheckUseRecommendStatus.Name = "CheckUseRecommendStatus";
-            this.CheckUseRecommendStatus.UseVisualStyleBackColor = true;
-            this.CheckUseRecommendStatus.CheckedChanged += new System.EventHandler(this.CheckUseRecommendStatus_CheckedChanged);
-            // 
             // StatusText
             // 
             resources.ApplyResources(this.StatusText, "StatusText");
             this.StatusText.Name = "StatusText";
+            // 
+            // FontPanel
+            // 
+            this.FontPanel.Controls.Add(this.GroupBox1);
+            resources.ApplyResources(this.FontPanel, "FontPanel");
+            this.FontPanel.Name = "FontPanel";
+            // 
+            // GroupBox1
+            // 
+            this.GroupBox1.Controls.Add(this.btnStolen);
+            this.GroupBox1.Controls.Add(this.lblStolen);
+            this.GroupBox1.Controls.Add(this.Label1);
+            this.GroupBox1.Controls.Add(this.btnRetweet);
+            this.GroupBox1.Controls.Add(this.lblRetweet);
+            this.GroupBox1.Controls.Add(this.Label80);
+            this.GroupBox1.Controls.Add(this.ButtonBackToDefaultFontColor);
+            this.GroupBox1.Controls.Add(this.btnDetailLink);
+            this.GroupBox1.Controls.Add(this.lblDetailLink);
+            this.GroupBox1.Controls.Add(this.Label18);
+            this.GroupBox1.Controls.Add(this.btnUnread);
+            this.GroupBox1.Controls.Add(this.lblUnread);
+            this.GroupBox1.Controls.Add(this.Label20);
+            this.GroupBox1.Controls.Add(this.btnDetailBack);
+            this.GroupBox1.Controls.Add(this.lblDetailBackcolor);
+            this.GroupBox1.Controls.Add(this.Label37);
+            this.GroupBox1.Controls.Add(this.btnDetail);
+            this.GroupBox1.Controls.Add(this.lblDetail);
+            this.GroupBox1.Controls.Add(this.Label26);
+            this.GroupBox1.Controls.Add(this.btnOWL);
+            this.GroupBox1.Controls.Add(this.lblOWL);
+            this.GroupBox1.Controls.Add(this.Label24);
+            this.GroupBox1.Controls.Add(this.btnFav);
+            this.GroupBox1.Controls.Add(this.lblFav);
+            this.GroupBox1.Controls.Add(this.Label22);
+            this.GroupBox1.Controls.Add(this.btnListFont);
+            this.GroupBox1.Controls.Add(this.lblListFont);
+            this.GroupBox1.Controls.Add(this.Label61);
+            resources.ApplyResources(this.GroupBox1, "GroupBox1");
+            this.GroupBox1.Name = "GroupBox1";
+            this.GroupBox1.TabStop = false;
+            // 
+            // btnStolen
+            // 
+            resources.ApplyResources(this.btnStolen, "btnStolen");
+            this.btnStolen.Name = "btnStolen";
+            this.btnStolen.UseVisualStyleBackColor = true;
+            this.btnStolen.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // lblStolen
+            // 
+            this.lblStolen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblStolen, "lblStolen");
+            this.lblStolen.Name = "lblStolen";
+            // 
+            // Label1
+            // 
+            resources.ApplyResources(this.Label1, "Label1");
+            this.Label1.Name = "Label1";
+            // 
+            // btnRetweet
+            // 
+            resources.ApplyResources(this.btnRetweet, "btnRetweet");
+            this.btnRetweet.Name = "btnRetweet";
+            this.btnRetweet.UseVisualStyleBackColor = true;
+            this.btnRetweet.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // lblRetweet
+            // 
+            this.lblRetweet.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblRetweet, "lblRetweet");
+            this.lblRetweet.Name = "lblRetweet";
+            // 
+            // Label80
+            // 
+            resources.ApplyResources(this.Label80, "Label80");
+            this.Label80.Name = "Label80";
+            // 
+            // ButtonBackToDefaultFontColor
+            // 
+            resources.ApplyResources(this.ButtonBackToDefaultFontColor, "ButtonBackToDefaultFontColor");
+            this.ButtonBackToDefaultFontColor.Name = "ButtonBackToDefaultFontColor";
+            this.ButtonBackToDefaultFontColor.UseVisualStyleBackColor = true;
+            this.ButtonBackToDefaultFontColor.Click += new System.EventHandler(this.ButtonBackToDefaultFontColor_Click);
+            // 
+            // btnDetailLink
+            // 
+            resources.ApplyResources(this.btnDetailLink, "btnDetailLink");
+            this.btnDetailLink.Name = "btnDetailLink";
+            this.btnDetailLink.UseVisualStyleBackColor = true;
+            this.btnDetailLink.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // lblDetailLink
+            // 
+            this.lblDetailLink.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblDetailLink, "lblDetailLink");
+            this.lblDetailLink.Name = "lblDetailLink";
+            // 
+            // Label18
+            // 
+            resources.ApplyResources(this.Label18, "Label18");
+            this.Label18.Name = "Label18";
+            // 
+            // btnUnread
+            // 
+            resources.ApplyResources(this.btnUnread, "btnUnread");
+            this.btnUnread.Name = "btnUnread";
+            this.btnUnread.UseVisualStyleBackColor = true;
+            this.btnUnread.Click += new System.EventHandler(this.btnFontAndColor_Click);
+            // 
+            // lblUnread
+            // 
+            this.lblUnread.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblUnread, "lblUnread");
+            this.lblUnread.Name = "lblUnread";
+            // 
+            // Label20
+            // 
+            resources.ApplyResources(this.Label20, "Label20");
+            this.Label20.Name = "Label20";
+            // 
+            // btnDetailBack
+            // 
+            resources.ApplyResources(this.btnDetailBack, "btnDetailBack");
+            this.btnDetailBack.Name = "btnDetailBack";
+            this.btnDetailBack.UseVisualStyleBackColor = true;
+            this.btnDetailBack.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // lblDetailBackcolor
+            // 
+            this.lblDetailBackcolor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblDetailBackcolor, "lblDetailBackcolor");
+            this.lblDetailBackcolor.Name = "lblDetailBackcolor";
+            // 
+            // Label37
+            // 
+            resources.ApplyResources(this.Label37, "Label37");
+            this.Label37.Name = "Label37";
+            // 
+            // btnDetail
+            // 
+            resources.ApplyResources(this.btnDetail, "btnDetail");
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnFontAndColor_Click);
+            // 
+            // lblDetail
+            // 
+            this.lblDetail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblDetail, "lblDetail");
+            this.lblDetail.Name = "lblDetail";
+            // 
+            // Label26
+            // 
+            resources.ApplyResources(this.Label26, "Label26");
+            this.Label26.Name = "Label26";
+            // 
+            // btnOWL
+            // 
+            resources.ApplyResources(this.btnOWL, "btnOWL");
+            this.btnOWL.Name = "btnOWL";
+            this.btnOWL.UseVisualStyleBackColor = true;
+            this.btnOWL.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // lblOWL
+            // 
+            this.lblOWL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblOWL, "lblOWL");
+            this.lblOWL.Name = "lblOWL";
+            // 
+            // Label24
+            // 
+            resources.ApplyResources(this.Label24, "Label24");
+            this.Label24.Name = "Label24";
+            // 
+            // btnFav
+            // 
+            resources.ApplyResources(this.btnFav, "btnFav");
+            this.btnFav.Name = "btnFav";
+            this.btnFav.UseVisualStyleBackColor = true;
+            this.btnFav.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // lblFav
+            // 
+            this.lblFav.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblFav, "lblFav");
+            this.lblFav.Name = "lblFav";
+            // 
+            // Label22
+            // 
+            resources.ApplyResources(this.Label22, "Label22");
+            this.Label22.Name = "Label22";
+            // 
+            // btnListFont
+            // 
+            resources.ApplyResources(this.btnListFont, "btnListFont");
+            this.btnListFont.Name = "btnListFont";
+            this.btnListFont.UseVisualStyleBackColor = true;
+            this.btnListFont.Click += new System.EventHandler(this.btnFontAndColor_Click);
+            // 
+            // lblListFont
+            // 
+            this.lblListFont.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblListFont, "lblListFont");
+            this.lblListFont.Name = "lblListFont";
+            // 
+            // Label61
+            // 
+            resources.ApplyResources(this.Label61, "Label61");
+            this.Label61.Name = "Label61";
+            // 
+            // FontPanel2
+            // 
+            this.FontPanel2.Controls.Add(this.GroupBox5);
+            resources.ApplyResources(this.FontPanel2, "FontPanel2");
+            this.FontPanel2.Name = "FontPanel2";
+            // 
+            // GroupBox5
+            // 
+            this.GroupBox5.Controls.Add(this.Label65);
+            this.GroupBox5.Controls.Add(this.Label52);
+            this.GroupBox5.Controls.Add(this.Label49);
+            this.GroupBox5.Controls.Add(this.Label9);
+            this.GroupBox5.Controls.Add(this.Label14);
+            this.GroupBox5.Controls.Add(this.Label16);
+            this.GroupBox5.Controls.Add(this.Label32);
+            this.GroupBox5.Controls.Add(this.Label34);
+            this.GroupBox5.Controls.Add(this.Label36);
+            this.GroupBox5.Controls.Add(this.btnInputFont);
+            this.GroupBox5.Controls.Add(this.btnInputBackcolor);
+            this.GroupBox5.Controls.Add(this.btnAtTo);
+            this.GroupBox5.Controls.Add(this.btnListBack);
+            this.GroupBox5.Controls.Add(this.btnAtFromTarget);
+            this.GroupBox5.Controls.Add(this.btnAtTarget);
+            this.GroupBox5.Controls.Add(this.btnTarget);
+            this.GroupBox5.Controls.Add(this.btnAtSelf);
+            this.GroupBox5.Controls.Add(this.btnSelf);
+            this.GroupBox5.Controls.Add(this.lblInputFont);
+            this.GroupBox5.Controls.Add(this.lblInputBackcolor);
+            this.GroupBox5.Controls.Add(this.lblAtTo);
+            this.GroupBox5.Controls.Add(this.lblListBackcolor);
+            this.GroupBox5.Controls.Add(this.lblAtFromTarget);
+            this.GroupBox5.Controls.Add(this.lblAtTarget);
+            this.GroupBox5.Controls.Add(this.lblTarget);
+            this.GroupBox5.Controls.Add(this.lblAtSelf);
+            this.GroupBox5.Controls.Add(this.lblSelf);
+            this.GroupBox5.Controls.Add(this.ButtonBackToDefaultFontColor2);
+            resources.ApplyResources(this.GroupBox5, "GroupBox5");
+            this.GroupBox5.Name = "GroupBox5";
+            this.GroupBox5.TabStop = false;
+            // 
+            // Label65
+            // 
+            resources.ApplyResources(this.Label65, "Label65");
+            this.Label65.Name = "Label65";
+            // 
+            // Label52
+            // 
+            resources.ApplyResources(this.Label52, "Label52");
+            this.Label52.Name = "Label52";
+            // 
+            // Label49
+            // 
+            resources.ApplyResources(this.Label49, "Label49");
+            this.Label49.Name = "Label49";
+            // 
+            // Label9
+            // 
+            resources.ApplyResources(this.Label9, "Label9");
+            this.Label9.Name = "Label9";
+            // 
+            // Label14
+            // 
+            resources.ApplyResources(this.Label14, "Label14");
+            this.Label14.Name = "Label14";
+            // 
+            // Label16
+            // 
+            resources.ApplyResources(this.Label16, "Label16");
+            this.Label16.Name = "Label16";
+            // 
+            // Label32
+            // 
+            resources.ApplyResources(this.Label32, "Label32");
+            this.Label32.Name = "Label32";
+            // 
+            // Label34
+            // 
+            resources.ApplyResources(this.Label34, "Label34");
+            this.Label34.Name = "Label34";
+            // 
+            // Label36
+            // 
+            resources.ApplyResources(this.Label36, "Label36");
+            this.Label36.Name = "Label36";
+            // 
+            // btnInputFont
+            // 
+            resources.ApplyResources(this.btnInputFont, "btnInputFont");
+            this.btnInputFont.Name = "btnInputFont";
+            this.btnInputFont.UseVisualStyleBackColor = true;
+            this.btnInputFont.Click += new System.EventHandler(this.btnFontAndColor_Click);
+            // 
+            // btnInputBackcolor
+            // 
+            resources.ApplyResources(this.btnInputBackcolor, "btnInputBackcolor");
+            this.btnInputBackcolor.Name = "btnInputBackcolor";
+            this.btnInputBackcolor.UseVisualStyleBackColor = true;
+            this.btnInputBackcolor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnAtTo
+            // 
+            resources.ApplyResources(this.btnAtTo, "btnAtTo");
+            this.btnAtTo.Name = "btnAtTo";
+            this.btnAtTo.UseVisualStyleBackColor = true;
+            this.btnAtTo.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnListBack
+            // 
+            resources.ApplyResources(this.btnListBack, "btnListBack");
+            this.btnListBack.Name = "btnListBack";
+            this.btnListBack.UseVisualStyleBackColor = true;
+            this.btnListBack.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnAtFromTarget
+            // 
+            resources.ApplyResources(this.btnAtFromTarget, "btnAtFromTarget");
+            this.btnAtFromTarget.Name = "btnAtFromTarget";
+            this.btnAtFromTarget.UseVisualStyleBackColor = true;
+            this.btnAtFromTarget.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnAtTarget
+            // 
+            resources.ApplyResources(this.btnAtTarget, "btnAtTarget");
+            this.btnAtTarget.Name = "btnAtTarget";
+            this.btnAtTarget.UseVisualStyleBackColor = true;
+            this.btnAtTarget.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnTarget
+            // 
+            resources.ApplyResources(this.btnTarget, "btnTarget");
+            this.btnTarget.Name = "btnTarget";
+            this.btnTarget.UseVisualStyleBackColor = true;
+            this.btnTarget.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnAtSelf
+            // 
+            resources.ApplyResources(this.btnAtSelf, "btnAtSelf");
+            this.btnAtSelf.Name = "btnAtSelf";
+            this.btnAtSelf.UseVisualStyleBackColor = true;
+            this.btnAtSelf.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnSelf
+            // 
+            resources.ApplyResources(this.btnSelf, "btnSelf");
+            this.btnSelf.Name = "btnSelf";
+            this.btnSelf.UseVisualStyleBackColor = true;
+            this.btnSelf.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // lblInputFont
+            // 
+            this.lblInputFont.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblInputFont, "lblInputFont");
+            this.lblInputFont.Name = "lblInputFont";
+            // 
+            // lblInputBackcolor
+            // 
+            this.lblInputBackcolor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblInputBackcolor, "lblInputBackcolor");
+            this.lblInputBackcolor.Name = "lblInputBackcolor";
+            // 
+            // lblAtTo
+            // 
+            this.lblAtTo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblAtTo, "lblAtTo");
+            this.lblAtTo.Name = "lblAtTo";
+            // 
+            // lblListBackcolor
+            // 
+            this.lblListBackcolor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblListBackcolor, "lblListBackcolor");
+            this.lblListBackcolor.Name = "lblListBackcolor";
+            // 
+            // lblAtFromTarget
+            // 
+            this.lblAtFromTarget.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblAtFromTarget, "lblAtFromTarget");
+            this.lblAtFromTarget.Name = "lblAtFromTarget";
+            // 
+            // lblAtTarget
+            // 
+            this.lblAtTarget.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblAtTarget, "lblAtTarget");
+            this.lblAtTarget.Name = "lblAtTarget";
+            // 
+            // lblTarget
+            // 
+            this.lblTarget.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblTarget, "lblTarget");
+            this.lblTarget.Name = "lblTarget";
+            // 
+            // lblAtSelf
+            // 
+            this.lblAtSelf.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblAtSelf, "lblAtSelf");
+            this.lblAtSelf.Name = "lblAtSelf";
+            // 
+            // lblSelf
+            // 
+            this.lblSelf.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.lblSelf, "lblSelf");
+            this.lblSelf.Name = "lblSelf";
+            // 
+            // ButtonBackToDefaultFontColor2
+            // 
+            resources.ApplyResources(this.ButtonBackToDefaultFontColor2, "ButtonBackToDefaultFontColor2");
+            this.ButtonBackToDefaultFontColor2.Name = "ButtonBackToDefaultFontColor2";
+            this.ButtonBackToDefaultFontColor2.UseVisualStyleBackColor = true;
+            this.ButtonBackToDefaultFontColor2.Click += new System.EventHandler(this.ButtonBackToDefaultFontColor_Click);
+            // 
+            // BasedPanel
+            // 
+            this.BasedPanel.Controls.Add(this.TLAuthUserCombo);
+            this.BasedPanel.Controls.Add(this.labelAccountTimeLine);
+            this.BasedPanel.Controls.Add(this.groupBoxConsumerKey);
+            this.BasedPanel.Controls.Add(this.AuthUserCombo);
+            this.BasedPanel.Controls.Add(this.GroupBox2);
+            this.BasedPanel.Controls.Add(this.CreateAccountButton);
+            this.BasedPanel.Controls.Add(this.StartAuthButton);
+            this.BasedPanel.Controls.Add(this.AuthClearButton);
+            this.BasedPanel.Controls.Add(this.Label4);
+            resources.ApplyResources(this.BasedPanel, "BasedPanel");
+            this.BasedPanel.Name = "BasedPanel";
+            // 
+            // TLAuthUserCombo
+            // 
+            this.TLAuthUserCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TLAuthUserCombo.FormattingEnabled = true;
+            resources.ApplyResources(this.TLAuthUserCombo, "TLAuthUserCombo");
+            this.TLAuthUserCombo.Name = "TLAuthUserCombo";
+            // 
+            // labelAccountTimeLine
+            // 
+            resources.ApplyResources(this.labelAccountTimeLine, "labelAccountTimeLine");
+            this.labelAccountTimeLine.Name = "labelAccountTimeLine";
+            // 
+            // groupBoxConsumerKey
+            // 
+            this.groupBoxConsumerKey.Controls.Add(this.labelConsumerKey);
+            this.groupBoxConsumerKey.Controls.Add(this.TextBoxTag);
+            this.groupBoxConsumerKey.Controls.Add(this.labelConsumerSecret);
+            this.groupBoxConsumerKey.Controls.Add(this.TextBoxConsumerSecret);
+            this.groupBoxConsumerKey.Controls.Add(this.labelTag);
+            this.groupBoxConsumerKey.Controls.Add(this.TextBoxConsumerKey);
+            resources.ApplyResources(this.groupBoxConsumerKey, "groupBoxConsumerKey");
+            this.groupBoxConsumerKey.Name = "groupBoxConsumerKey";
+            this.groupBoxConsumerKey.TabStop = false;
+            // 
+            // labelConsumerKey
+            // 
+            resources.ApplyResources(this.labelConsumerKey, "labelConsumerKey");
+            this.labelConsumerKey.Name = "labelConsumerKey";
+            // 
+            // TextBoxTag
+            // 
+            resources.ApplyResources(this.TextBoxTag, "TextBoxTag");
+            this.TextBoxTag.Name = "TextBoxTag";
+            // 
+            // labelConsumerSecret
+            // 
+            resources.ApplyResources(this.labelConsumerSecret, "labelConsumerSecret");
+            this.labelConsumerSecret.Name = "labelConsumerSecret";
+            // 
+            // TextBoxConsumerSecret
+            // 
+            resources.ApplyResources(this.TextBoxConsumerSecret, "TextBoxConsumerSecret");
+            this.TextBoxConsumerSecret.Name = "TextBoxConsumerSecret";
+            // 
+            // labelTag
+            // 
+            resources.ApplyResources(this.labelTag, "labelTag");
+            this.labelTag.Name = "labelTag";
+            // 
+            // TextBoxConsumerKey
+            // 
+            resources.ApplyResources(this.TextBoxConsumerKey, "TextBoxConsumerKey");
+            this.TextBoxConsumerKey.Name = "TextBoxConsumerKey";
+            // 
+            // AuthUserCombo
+            // 
+            this.AuthUserCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AuthUserCombo.FormattingEnabled = true;
+            resources.ApplyResources(this.AuthUserCombo, "AuthUserCombo");
+            this.AuthUserCombo.Name = "AuthUserCombo";
+            // 
+            // GroupBox2
+            // 
+            this.GroupBox2.Controls.Add(this.EmailText);
+            this.GroupBox2.Controls.Add(this.Label6);
+            this.GroupBox2.Controls.Add(this.FollowCheckBox);
+            resources.ApplyResources(this.GroupBox2, "GroupBox2");
+            this.GroupBox2.Name = "GroupBox2";
+            this.GroupBox2.TabStop = false;
+            // 
+            // EmailText
+            // 
+            resources.ApplyResources(this.EmailText, "EmailText");
+            this.EmailText.Name = "EmailText";
+            // 
+            // Label6
+            // 
+            resources.ApplyResources(this.Label6, "Label6");
+            this.Label6.Name = "Label6";
+            // 
+            // FollowCheckBox
+            // 
+            resources.ApplyResources(this.FollowCheckBox, "FollowCheckBox");
+            this.FollowCheckBox.Checked = true;
+            this.FollowCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.FollowCheckBox.Name = "FollowCheckBox";
+            this.FollowCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // CreateAccountButton
+            // 
+            resources.ApplyResources(this.CreateAccountButton, "CreateAccountButton");
+            this.CreateAccountButton.Name = "CreateAccountButton";
+            this.CreateAccountButton.UseVisualStyleBackColor = true;
+            this.CreateAccountButton.Click += new System.EventHandler(this.CreateAccountButton_Click);
+            // 
+            // StartAuthButton
+            // 
+            resources.ApplyResources(this.StartAuthButton, "StartAuthButton");
+            this.StartAuthButton.Name = "StartAuthButton";
+            this.StartAuthButton.UseVisualStyleBackColor = true;
+            this.StartAuthButton.Click += new System.EventHandler(this.StartAuthButton_Click);
+            // 
+            // AuthClearButton
+            // 
+            resources.ApplyResources(this.AuthClearButton, "AuthClearButton");
+            this.AuthClearButton.Name = "AuthClearButton";
+            this.AuthClearButton.UseVisualStyleBackColor = true;
+            this.AuthClearButton.Click += new System.EventHandler(this.AuthClearButton_Click);
+            // 
+            // Label4
+            // 
+            resources.ApplyResources(this.Label4, "Label4");
+            this.Label4.Name = "Label4";
+            // 
+            // StartupPanel
+            // 
+            this.StartupPanel.Controls.Add(this.StartupReaded);
+            this.StartupPanel.Controls.Add(this.CheckStartupFollowers);
+            this.StartupPanel.Controls.Add(this.CheckStartupVersion);
+            this.StartupPanel.Controls.Add(this.chkGetFav);
+            resources.ApplyResources(this.StartupPanel, "StartupPanel");
+            this.StartupPanel.Name = "StartupPanel";
+            // 
+            // StartupReaded
+            // 
+            resources.ApplyResources(this.StartupReaded, "StartupReaded");
+            this.StartupReaded.Name = "StartupReaded";
+            this.StartupReaded.UseVisualStyleBackColor = true;
+            // 
+            // CheckStartupFollowers
+            // 
+            resources.ApplyResources(this.CheckStartupFollowers, "CheckStartupFollowers");
+            this.CheckStartupFollowers.Name = "CheckStartupFollowers";
+            this.CheckStartupFollowers.UseVisualStyleBackColor = true;
+            // 
+            // CheckStartupVersion
+            // 
+            resources.ApplyResources(this.CheckStartupVersion, "CheckStartupVersion");
+            this.CheckStartupVersion.Name = "CheckStartupVersion";
+            this.CheckStartupVersion.UseVisualStyleBackColor = true;
+            // 
+            // chkGetFav
+            // 
+            resources.ApplyResources(this.chkGetFav, "chkGetFav");
+            this.chkGetFav.Name = "chkGetFav";
+            this.chkGetFav.UseVisualStyleBackColor = true;
             // 
             // GetCountPanel
             // 
@@ -1002,86 +1357,6 @@
             this.TextCountApi.Name = "TextCountApi";
             this.TextCountApi.Validating += new System.ComponentModel.CancelEventHandler(this.TextCountApi_Validating);
             // 
-            // ShortUrlPanel
-            // 
-            this.ShortUrlPanel.Controls.Add(this.ShortenTcoCheck);
-            this.ShortUrlPanel.Controls.Add(this.CheckForceResolve);
-            this.ShortUrlPanel.Controls.Add(this.CheckTinyURL);
-            this.ShortUrlPanel.Controls.Add(this.TextBitlyPw);
-            this.ShortUrlPanel.Controls.Add(this.CheckAutoConvertUrl);
-            this.ShortUrlPanel.Controls.Add(this.Label71);
-            this.ShortUrlPanel.Controls.Add(this.ComboBoxAutoShortUrlFirst);
-            this.ShortUrlPanel.Controls.Add(this.Label76);
-            this.ShortUrlPanel.Controls.Add(this.Label77);
-            this.ShortUrlPanel.Controls.Add(this.TextBitlyId);
-            resources.ApplyResources(this.ShortUrlPanel, "ShortUrlPanel");
-            this.ShortUrlPanel.Name = "ShortUrlPanel";
-            // 
-            // ShortenTcoCheck
-            // 
-            resources.ApplyResources(this.ShortenTcoCheck, "ShortenTcoCheck");
-            this.ShortenTcoCheck.Name = "ShortenTcoCheck";
-            this.ShortenTcoCheck.UseVisualStyleBackColor = true;
-            // 
-            // CheckForceResolve
-            // 
-            resources.ApplyResources(this.CheckForceResolve, "CheckForceResolve");
-            this.CheckForceResolve.Name = "CheckForceResolve";
-            this.CheckForceResolve.UseVisualStyleBackColor = true;
-            // 
-            // CheckTinyURL
-            // 
-            resources.ApplyResources(this.CheckTinyURL, "CheckTinyURL");
-            this.CheckTinyURL.Name = "CheckTinyURL";
-            this.CheckTinyURL.UseVisualStyleBackColor = true;
-            // 
-            // TextBitlyPw
-            // 
-            resources.ApplyResources(this.TextBitlyPw, "TextBitlyPw");
-            this.TextBitlyPw.Name = "TextBitlyPw";
-            // 
-            // CheckAutoConvertUrl
-            // 
-            resources.ApplyResources(this.CheckAutoConvertUrl, "CheckAutoConvertUrl");
-            this.CheckAutoConvertUrl.Name = "CheckAutoConvertUrl";
-            this.CheckAutoConvertUrl.UseVisualStyleBackColor = true;
-            this.CheckAutoConvertUrl.CheckedChanged += new System.EventHandler(this.CheckAutoConvertUrl_CheckedChanged);
-            // 
-            // Label71
-            // 
-            resources.ApplyResources(this.Label71, "Label71");
-            this.Label71.Name = "Label71";
-            // 
-            // ComboBoxAutoShortUrlFirst
-            // 
-            this.ComboBoxAutoShortUrlFirst.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBoxAutoShortUrlFirst.FormattingEnabled = true;
-            this.ComboBoxAutoShortUrlFirst.Items.AddRange(new object[] {
-            resources.GetString("ComboBoxAutoShortUrlFirst.Items"),
-            resources.GetString("ComboBoxAutoShortUrlFirst.Items1"),
-            resources.GetString("ComboBoxAutoShortUrlFirst.Items2"),
-            resources.GetString("ComboBoxAutoShortUrlFirst.Items3"),
-            resources.GetString("ComboBoxAutoShortUrlFirst.Items4"),
-            resources.GetString("ComboBoxAutoShortUrlFirst.Items5")});
-            resources.ApplyResources(this.ComboBoxAutoShortUrlFirst, "ComboBoxAutoShortUrlFirst");
-            this.ComboBoxAutoShortUrlFirst.Name = "ComboBoxAutoShortUrlFirst";
-            this.ComboBoxAutoShortUrlFirst.SelectedIndexChanged += new System.EventHandler(this.ComboBoxAutoShortUrlFirst_SelectedIndexChanged);
-            // 
-            // Label76
-            // 
-            resources.ApplyResources(this.Label76, "Label76");
-            this.Label76.Name = "Label76";
-            // 
-            // Label77
-            // 
-            resources.ApplyResources(this.Label77, "Label77");
-            this.Label77.Name = "Label77";
-            // 
-            // TextBitlyId
-            // 
-            resources.ApplyResources(this.TextBitlyId, "TextBitlyId");
-            this.TextBitlyId.Name = "TextBitlyId";
-            // 
             // TweetPrvPanel
             // 
             this.TweetPrvPanel.Controls.Add(this.IsListsIncludeRtsCheckBox);
@@ -1094,7 +1369,6 @@
             this.TweetPrvPanel.Controls.Add(this.Label11);
             this.TweetPrvPanel.Controls.Add(this.IconSize);
             this.TweetPrvPanel.Controls.Add(this.TextBox3);
-            this.TweetPrvPanel.Controls.Add(this.CheckViewTabBottom);
             this.TweetPrvPanel.Controls.Add(this.CheckSortOrderLock);
             this.TweetPrvPanel.Controls.Add(this.CheckShowGrid);
             this.TweetPrvPanel.Controls.Add(this.chkUnreadStyle);
@@ -1180,14 +1454,6 @@
             resources.ApplyResources(this.TextBox3, "TextBox3");
             this.TextBox3.Name = "TextBox3";
             // 
-            // CheckViewTabBottom
-            // 
-            resources.ApplyResources(this.CheckViewTabBottom, "CheckViewTabBottom");
-            this.CheckViewTabBottom.Checked = true;
-            this.CheckViewTabBottom.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckViewTabBottom.Name = "CheckViewTabBottom";
-            this.CheckViewTabBottom.UseVisualStyleBackColor = true;
-            // 
             // CheckSortOrderLock
             // 
             resources.ApplyResources(this.CheckSortOrderLock, "CheckSortOrderLock");
@@ -1214,6 +1480,7 @@
             // 
             // NotifyPanel
             // 
+            this.NotifyPanel.Controls.Add(this.CheckUnfollowEvent);
             this.NotifyPanel.Controls.Add(this.IsRemoveSameFavEventCheckBox);
             this.NotifyPanel.Controls.Add(this.CheckUserUpdateEvent);
             this.NotifyPanel.Controls.Add(this.Label35);
@@ -1833,403 +2100,6 @@
             this.CheckReadOldPosts.Name = "CheckReadOldPosts";
             this.CheckReadOldPosts.UseVisualStyleBackColor = true;
             // 
-            // FontPanel
-            // 
-            this.FontPanel.Controls.Add(this.GroupBox1);
-            resources.ApplyResources(this.FontPanel, "FontPanel");
-            this.FontPanel.Name = "FontPanel";
-            // 
-            // GroupBox1
-            // 
-            this.GroupBox1.Controls.Add(this.btnRetweet);
-            this.GroupBox1.Controls.Add(this.lblRetweet);
-            this.GroupBox1.Controls.Add(this.Label80);
-            this.GroupBox1.Controls.Add(this.ButtonBackToDefaultFontColor);
-            this.GroupBox1.Controls.Add(this.btnDetailLink);
-            this.GroupBox1.Controls.Add(this.lblDetailLink);
-            this.GroupBox1.Controls.Add(this.Label18);
-            this.GroupBox1.Controls.Add(this.btnUnread);
-            this.GroupBox1.Controls.Add(this.lblUnread);
-            this.GroupBox1.Controls.Add(this.Label20);
-            this.GroupBox1.Controls.Add(this.btnDetailBack);
-            this.GroupBox1.Controls.Add(this.lblDetailBackcolor);
-            this.GroupBox1.Controls.Add(this.Label37);
-            this.GroupBox1.Controls.Add(this.btnDetail);
-            this.GroupBox1.Controls.Add(this.lblDetail);
-            this.GroupBox1.Controls.Add(this.Label26);
-            this.GroupBox1.Controls.Add(this.btnOWL);
-            this.GroupBox1.Controls.Add(this.lblOWL);
-            this.GroupBox1.Controls.Add(this.Label24);
-            this.GroupBox1.Controls.Add(this.btnFav);
-            this.GroupBox1.Controls.Add(this.lblFav);
-            this.GroupBox1.Controls.Add(this.Label22);
-            this.GroupBox1.Controls.Add(this.btnListFont);
-            this.GroupBox1.Controls.Add(this.lblListFont);
-            this.GroupBox1.Controls.Add(this.Label61);
-            resources.ApplyResources(this.GroupBox1, "GroupBox1");
-            this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.TabStop = false;
-            // 
-            // btnRetweet
-            // 
-            resources.ApplyResources(this.btnRetweet, "btnRetweet");
-            this.btnRetweet.Name = "btnRetweet";
-            this.btnRetweet.UseVisualStyleBackColor = true;
-            this.btnRetweet.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // lblRetweet
-            // 
-            this.lblRetweet.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblRetweet, "lblRetweet");
-            this.lblRetweet.Name = "lblRetweet";
-            // 
-            // Label80
-            // 
-            resources.ApplyResources(this.Label80, "Label80");
-            this.Label80.Name = "Label80";
-            // 
-            // ButtonBackToDefaultFontColor
-            // 
-            resources.ApplyResources(this.ButtonBackToDefaultFontColor, "ButtonBackToDefaultFontColor");
-            this.ButtonBackToDefaultFontColor.Name = "ButtonBackToDefaultFontColor";
-            this.ButtonBackToDefaultFontColor.UseVisualStyleBackColor = true;
-            this.ButtonBackToDefaultFontColor.Click += new System.EventHandler(this.ButtonBackToDefaultFontColor_Click);
-            // 
-            // btnDetailLink
-            // 
-            resources.ApplyResources(this.btnDetailLink, "btnDetailLink");
-            this.btnDetailLink.Name = "btnDetailLink";
-            this.btnDetailLink.UseVisualStyleBackColor = true;
-            this.btnDetailLink.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // lblDetailLink
-            // 
-            this.lblDetailLink.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblDetailLink, "lblDetailLink");
-            this.lblDetailLink.Name = "lblDetailLink";
-            // 
-            // Label18
-            // 
-            resources.ApplyResources(this.Label18, "Label18");
-            this.Label18.Name = "Label18";
-            // 
-            // btnUnread
-            // 
-            resources.ApplyResources(this.btnUnread, "btnUnread");
-            this.btnUnread.Name = "btnUnread";
-            this.btnUnread.UseVisualStyleBackColor = true;
-            this.btnUnread.Click += new System.EventHandler(this.btnFontAndColor_Click);
-            // 
-            // lblUnread
-            // 
-            this.lblUnread.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblUnread, "lblUnread");
-            this.lblUnread.Name = "lblUnread";
-            // 
-            // Label20
-            // 
-            resources.ApplyResources(this.Label20, "Label20");
-            this.Label20.Name = "Label20";
-            // 
-            // btnDetailBack
-            // 
-            resources.ApplyResources(this.btnDetailBack, "btnDetailBack");
-            this.btnDetailBack.Name = "btnDetailBack";
-            this.btnDetailBack.UseVisualStyleBackColor = true;
-            this.btnDetailBack.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // lblDetailBackcolor
-            // 
-            this.lblDetailBackcolor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblDetailBackcolor, "lblDetailBackcolor");
-            this.lblDetailBackcolor.Name = "lblDetailBackcolor";
-            // 
-            // Label37
-            // 
-            resources.ApplyResources(this.Label37, "Label37");
-            this.Label37.Name = "Label37";
-            // 
-            // btnDetail
-            // 
-            resources.ApplyResources(this.btnDetail, "btnDetail");
-            this.btnDetail.Name = "btnDetail";
-            this.btnDetail.UseVisualStyleBackColor = true;
-            this.btnDetail.Click += new System.EventHandler(this.btnFontAndColor_Click);
-            // 
-            // lblDetail
-            // 
-            this.lblDetail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblDetail, "lblDetail");
-            this.lblDetail.Name = "lblDetail";
-            // 
-            // Label26
-            // 
-            resources.ApplyResources(this.Label26, "Label26");
-            this.Label26.Name = "Label26";
-            // 
-            // btnOWL
-            // 
-            resources.ApplyResources(this.btnOWL, "btnOWL");
-            this.btnOWL.Name = "btnOWL";
-            this.btnOWL.UseVisualStyleBackColor = true;
-            this.btnOWL.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // lblOWL
-            // 
-            this.lblOWL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblOWL, "lblOWL");
-            this.lblOWL.Name = "lblOWL";
-            // 
-            // Label24
-            // 
-            resources.ApplyResources(this.Label24, "Label24");
-            this.Label24.Name = "Label24";
-            // 
-            // btnFav
-            // 
-            resources.ApplyResources(this.btnFav, "btnFav");
-            this.btnFav.Name = "btnFav";
-            this.btnFav.UseVisualStyleBackColor = true;
-            this.btnFav.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // lblFav
-            // 
-            this.lblFav.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblFav, "lblFav");
-            this.lblFav.Name = "lblFav";
-            // 
-            // Label22
-            // 
-            resources.ApplyResources(this.Label22, "Label22");
-            this.Label22.Name = "Label22";
-            // 
-            // btnListFont
-            // 
-            resources.ApplyResources(this.btnListFont, "btnListFont");
-            this.btnListFont.Name = "btnListFont";
-            this.btnListFont.UseVisualStyleBackColor = true;
-            this.btnListFont.Click += new System.EventHandler(this.btnFontAndColor_Click);
-            // 
-            // lblListFont
-            // 
-            this.lblListFont.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblListFont, "lblListFont");
-            this.lblListFont.Name = "lblListFont";
-            // 
-            // Label61
-            // 
-            resources.ApplyResources(this.Label61, "Label61");
-            this.Label61.Name = "Label61";
-            // 
-            // FontPanel2
-            // 
-            this.FontPanel2.Controls.Add(this.GroupBox5);
-            resources.ApplyResources(this.FontPanel2, "FontPanel2");
-            this.FontPanel2.Name = "FontPanel2";
-            // 
-            // GroupBox5
-            // 
-            this.GroupBox5.Controls.Add(this.Label65);
-            this.GroupBox5.Controls.Add(this.Label52);
-            this.GroupBox5.Controls.Add(this.Label49);
-            this.GroupBox5.Controls.Add(this.Label9);
-            this.GroupBox5.Controls.Add(this.Label14);
-            this.GroupBox5.Controls.Add(this.Label16);
-            this.GroupBox5.Controls.Add(this.Label32);
-            this.GroupBox5.Controls.Add(this.Label34);
-            this.GroupBox5.Controls.Add(this.Label36);
-            this.GroupBox5.Controls.Add(this.btnInputFont);
-            this.GroupBox5.Controls.Add(this.btnInputBackcolor);
-            this.GroupBox5.Controls.Add(this.btnAtTo);
-            this.GroupBox5.Controls.Add(this.btnListBack);
-            this.GroupBox5.Controls.Add(this.btnAtFromTarget);
-            this.GroupBox5.Controls.Add(this.btnAtTarget);
-            this.GroupBox5.Controls.Add(this.btnTarget);
-            this.GroupBox5.Controls.Add(this.btnAtSelf);
-            this.GroupBox5.Controls.Add(this.btnSelf);
-            this.GroupBox5.Controls.Add(this.lblInputFont);
-            this.GroupBox5.Controls.Add(this.lblInputBackcolor);
-            this.GroupBox5.Controls.Add(this.lblAtTo);
-            this.GroupBox5.Controls.Add(this.lblListBackcolor);
-            this.GroupBox5.Controls.Add(this.lblAtFromTarget);
-            this.GroupBox5.Controls.Add(this.lblAtTarget);
-            this.GroupBox5.Controls.Add(this.lblTarget);
-            this.GroupBox5.Controls.Add(this.lblAtSelf);
-            this.GroupBox5.Controls.Add(this.lblSelf);
-            this.GroupBox5.Controls.Add(this.ButtonBackToDefaultFontColor2);
-            resources.ApplyResources(this.GroupBox5, "GroupBox5");
-            this.GroupBox5.Name = "GroupBox5";
-            this.GroupBox5.TabStop = false;
-            // 
-            // Label65
-            // 
-            resources.ApplyResources(this.Label65, "Label65");
-            this.Label65.Name = "Label65";
-            // 
-            // Label52
-            // 
-            resources.ApplyResources(this.Label52, "Label52");
-            this.Label52.Name = "Label52";
-            // 
-            // Label49
-            // 
-            resources.ApplyResources(this.Label49, "Label49");
-            this.Label49.Name = "Label49";
-            // 
-            // Label9
-            // 
-            resources.ApplyResources(this.Label9, "Label9");
-            this.Label9.Name = "Label9";
-            // 
-            // Label14
-            // 
-            resources.ApplyResources(this.Label14, "Label14");
-            this.Label14.Name = "Label14";
-            // 
-            // Label16
-            // 
-            resources.ApplyResources(this.Label16, "Label16");
-            this.Label16.Name = "Label16";
-            // 
-            // Label32
-            // 
-            resources.ApplyResources(this.Label32, "Label32");
-            this.Label32.Name = "Label32";
-            // 
-            // Label34
-            // 
-            resources.ApplyResources(this.Label34, "Label34");
-            this.Label34.Name = "Label34";
-            // 
-            // Label36
-            // 
-            resources.ApplyResources(this.Label36, "Label36");
-            this.Label36.Name = "Label36";
-            // 
-            // btnInputFont
-            // 
-            resources.ApplyResources(this.btnInputFont, "btnInputFont");
-            this.btnInputFont.Name = "btnInputFont";
-            this.btnInputFont.UseVisualStyleBackColor = true;
-            this.btnInputFont.Click += new System.EventHandler(this.btnFontAndColor_Click);
-            // 
-            // btnInputBackcolor
-            // 
-            resources.ApplyResources(this.btnInputBackcolor, "btnInputBackcolor");
-            this.btnInputBackcolor.Name = "btnInputBackcolor";
-            this.btnInputBackcolor.UseVisualStyleBackColor = true;
-            this.btnInputBackcolor.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // btnAtTo
-            // 
-            resources.ApplyResources(this.btnAtTo, "btnAtTo");
-            this.btnAtTo.Name = "btnAtTo";
-            this.btnAtTo.UseVisualStyleBackColor = true;
-            this.btnAtTo.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // btnListBack
-            // 
-            resources.ApplyResources(this.btnListBack, "btnListBack");
-            this.btnListBack.Name = "btnListBack";
-            this.btnListBack.UseVisualStyleBackColor = true;
-            this.btnListBack.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // btnAtFromTarget
-            // 
-            resources.ApplyResources(this.btnAtFromTarget, "btnAtFromTarget");
-            this.btnAtFromTarget.Name = "btnAtFromTarget";
-            this.btnAtFromTarget.UseVisualStyleBackColor = true;
-            this.btnAtFromTarget.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // btnAtTarget
-            // 
-            resources.ApplyResources(this.btnAtTarget, "btnAtTarget");
-            this.btnAtTarget.Name = "btnAtTarget";
-            this.btnAtTarget.UseVisualStyleBackColor = true;
-            this.btnAtTarget.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // btnTarget
-            // 
-            resources.ApplyResources(this.btnTarget, "btnTarget");
-            this.btnTarget.Name = "btnTarget";
-            this.btnTarget.UseVisualStyleBackColor = true;
-            this.btnTarget.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // btnAtSelf
-            // 
-            resources.ApplyResources(this.btnAtSelf, "btnAtSelf");
-            this.btnAtSelf.Name = "btnAtSelf";
-            this.btnAtSelf.UseVisualStyleBackColor = true;
-            this.btnAtSelf.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // btnSelf
-            // 
-            resources.ApplyResources(this.btnSelf, "btnSelf");
-            this.btnSelf.Name = "btnSelf";
-            this.btnSelf.UseVisualStyleBackColor = true;
-            this.btnSelf.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // lblInputFont
-            // 
-            this.lblInputFont.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblInputFont, "lblInputFont");
-            this.lblInputFont.Name = "lblInputFont";
-            // 
-            // lblInputBackcolor
-            // 
-            this.lblInputBackcolor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblInputBackcolor, "lblInputBackcolor");
-            this.lblInputBackcolor.Name = "lblInputBackcolor";
-            // 
-            // lblAtTo
-            // 
-            this.lblAtTo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblAtTo, "lblAtTo");
-            this.lblAtTo.Name = "lblAtTo";
-            // 
-            // lblListBackcolor
-            // 
-            this.lblListBackcolor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblListBackcolor, "lblListBackcolor");
-            this.lblListBackcolor.Name = "lblListBackcolor";
-            // 
-            // lblAtFromTarget
-            // 
-            this.lblAtFromTarget.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblAtFromTarget, "lblAtFromTarget");
-            this.lblAtFromTarget.Name = "lblAtFromTarget";
-            // 
-            // lblAtTarget
-            // 
-            this.lblAtTarget.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblAtTarget, "lblAtTarget");
-            this.lblAtTarget.Name = "lblAtTarget";
-            // 
-            // lblTarget
-            // 
-            this.lblTarget.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblTarget, "lblTarget");
-            this.lblTarget.Name = "lblTarget";
-            // 
-            // lblAtSelf
-            // 
-            this.lblAtSelf.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblAtSelf, "lblAtSelf");
-            this.lblAtSelf.Name = "lblAtSelf";
-            // 
-            // lblSelf
-            // 
-            this.lblSelf.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.lblSelf, "lblSelf");
-            this.lblSelf.Name = "lblSelf";
-            // 
-            // ButtonBackToDefaultFontColor2
-            // 
-            resources.ApplyResources(this.ButtonBackToDefaultFontColor2, "ButtonBackToDefaultFontColor2");
-            this.ButtonBackToDefaultFontColor2.Name = "ButtonBackToDefaultFontColor2";
-            this.ButtonBackToDefaultFontColor2.UseVisualStyleBackColor = true;
-            this.ButtonBackToDefaultFontColor2.Click += new System.EventHandler(this.ButtonBackToDefaultFontColor_Click);
-            // 
             // Save
             // 
             this.Save.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -2247,12 +2117,17 @@
             this.Cancel.UseVisualStyleBackColor = true;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
-            // UpdateAccountButton
+            // FontDialog1
             // 
-            resources.ApplyResources(this.UpdateAccountButton, "UpdateAccountButton");
-            this.UpdateAccountButton.Name = "UpdateAccountButton";
-            this.UpdateAccountButton.UseVisualStyleBackColor = true;
-            this.UpdateAccountButton.Click += new System.EventHandler(this.UpdateAccountButton_Click);
+            this.FontDialog1.Color = System.Drawing.SystemColors.ControlText;
+            // 
+            // CheckUnfollowEvent
+            // 
+            resources.ApplyResources(this.CheckUnfollowEvent, "CheckUnfollowEvent");
+            this.CheckUnfollowEvent.Checked = true;
+            this.CheckUnfollowEvent.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CheckUnfollowEvent.Name = "CheckUnfollowEvent";
+            this.CheckUnfollowEvent.UseVisualStyleBackColor = true;
             // 
             // AppendSettingDialog
             // 
@@ -2274,22 +2149,32 @@
             this.SplitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer1)).EndInit();
             this.SplitContainer1.ResumeLayout(false);
-            this.BasedPanel.ResumeLayout(false);
-            this.BasedPanel.PerformLayout();
             this.CooperatePanel.ResumeLayout(false);
             this.CooperatePanel.PerformLayout();
             this.MapThumbnailGroupBox.ResumeLayout(false);
             this.MapThumbnailGroupBox.PerformLayout();
-            this.StartupPanel.ResumeLayout(false);
-            this.StartupPanel.PerformLayout();
+            this.ShortUrlPanel.ResumeLayout(false);
+            this.ShortUrlPanel.PerformLayout();
             this.PreviewPanel.ResumeLayout(false);
             this.PreviewPanel.PerformLayout();
             this.TweetActPanel.ResumeLayout(false);
             this.TweetActPanel.PerformLayout();
+            this.FontPanel.ResumeLayout(false);
+            this.GroupBox1.ResumeLayout(false);
+            this.GroupBox1.PerformLayout();
+            this.FontPanel2.ResumeLayout(false);
+            this.GroupBox5.ResumeLayout(false);
+            this.GroupBox5.PerformLayout();
+            this.BasedPanel.ResumeLayout(false);
+            this.BasedPanel.PerformLayout();
+            this.groupBoxConsumerKey.ResumeLayout(false);
+            this.groupBoxConsumerKey.PerformLayout();
+            this.GroupBox2.ResumeLayout(false);
+            this.GroupBox2.PerformLayout();
+            this.StartupPanel.ResumeLayout(false);
+            this.StartupPanel.PerformLayout();
             this.GetCountPanel.ResumeLayout(false);
             this.GetCountPanel.PerformLayout();
-            this.ShortUrlPanel.ResumeLayout(false);
-            this.ShortUrlPanel.PerformLayout();
             this.TweetPrvPanel.ResumeLayout(false);
             this.TweetPrvPanel.PerformLayout();
             this.NotifyPanel.ResumeLayout(false);
@@ -2304,13 +2189,6 @@
             this.ActionPanel.PerformLayout();
             this.GroupBox3.ResumeLayout(false);
             this.GroupBox3.PerformLayout();
-            this.FontPanel.ResumeLayout(false);
-            this.GroupBox1.ResumeLayout(false);
-            this.GroupBox1.PerformLayout();
-            this.FontPanel2.ResumeLayout(false);
-            this.GroupBox5.ResumeLayout(false);
-            this.GroupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserAccountBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2340,9 +2218,6 @@
         internal System.Windows.Forms.CheckBox ChkNewMentionsBlink;
         internal System.Windows.Forms.CheckBox chkTabIconDisp;
         internal System.Windows.Forms.CheckBox CheckPreviewEnable;
-        internal System.Windows.Forms.Label Label81;
-        internal System.Windows.Forms.ComboBox LanguageCombo;
-        internal System.Windows.Forms.Label Label13;
         internal System.Windows.Forms.CheckBox CheckAlwaysTop;
         internal System.Windows.Forms.CheckBox CheckMonospace;
         internal System.Windows.Forms.CheckBox CheckBalloonLimit;
@@ -2359,7 +2234,6 @@
         internal System.Windows.Forms.Label Label27;
         internal System.Windows.Forms.CheckBox CheckRetweetNoConfirm;
         internal System.Windows.Forms.Label Label12;
-        internal System.Windows.Forms.CheckBox CheckUseRecommendStatus;
         internal System.Windows.Forms.TextBox StatusText;
         internal System.Windows.Forms.Panel GetCountPanel;
         internal System.Windows.Forms.TextBox ListTextCountApi;
@@ -2380,17 +2254,15 @@
         internal System.Windows.Forms.Label Label67;
         internal System.Windows.Forms.TextBox TextCountApi;
         internal System.Windows.Forms.Panel ShortUrlPanel;
-        internal System.Windows.Forms.CheckBox ShortenTcoCheck;
         internal System.Windows.Forms.CheckBox CheckForceResolve;
         internal System.Windows.Forms.CheckBox CheckTinyURL;
-        internal System.Windows.Forms.TextBox TextBitlyPw;
-        internal System.Windows.Forms.CheckBox CheckAutoConvertUrl;
-        internal System.Windows.Forms.Label Label71;
-        internal System.Windows.Forms.ComboBox ComboBoxAutoShortUrlFirst;
-        internal System.Windows.Forms.Label Label76;
-        internal System.Windows.Forms.Label Label77;
-        internal System.Windows.Forms.TextBox TextBitlyId;
         internal System.Windows.Forms.Panel BasedPanel;
+        internal System.Windows.Forms.ComboBox AuthUserCombo;
+        internal System.Windows.Forms.GroupBox GroupBox2;
+        internal System.Windows.Forms.TextBox EmailText;
+        internal System.Windows.Forms.Label Label6;
+        internal System.Windows.Forms.CheckBox FollowCheckBox;
+        internal System.Windows.Forms.Button CreateAccountButton;
         internal System.Windows.Forms.Button StartAuthButton;
         internal System.Windows.Forms.Button AuthClearButton;
         internal System.Windows.Forms.Label Label4;
@@ -2435,9 +2307,6 @@
         internal System.Windows.Forms.Label Label40;
         internal System.Windows.Forms.Label Label39;
         internal System.Windows.Forms.TextBox UserAppointUrlText;
-        internal System.Windows.Forms.ComboBox ComboBoxTranslateLanguage;
-        internal System.Windows.Forms.Label Label29;
-        internal System.Windows.Forms.CheckBox CheckNicoms;
         internal System.Windows.Forms.Panel ProxyPanel;
         internal System.Windows.Forms.Label Label55;
         internal System.Windows.Forms.TextBox TextProxyPassword;
@@ -2564,10 +2433,20 @@
         internal System.Windows.Forms.FontDialog FontDialog1;
         private System.Windows.Forms.ComboBox MapThumbnailProviderComboBox;
         private System.Windows.Forms.Label label48;
-        internal System.Windows.Forms.CheckBox CheckViewTabBottom;
-        private System.Windows.Forms.BindingSource UserAccountBindingSource;
-        private System.Windows.Forms.Button AddAccountButton;
-        internal System.Windows.Forms.CheckedListBox UserAccountsCheckedListBox;
-        private System.Windows.Forms.Button UpdateAccountButton;
+        private System.Windows.Forms.GroupBox groupBoxConsumerKey;
+        private System.Windows.Forms.Label labelConsumerKey;
+        private System.Windows.Forms.TextBox TextBoxTag;
+        private System.Windows.Forms.Label labelConsumerSecret;
+        private System.Windows.Forms.TextBox TextBoxConsumerSecret;
+        private System.Windows.Forms.Label labelTag;
+        private System.Windows.Forms.TextBox TextBoxConsumerKey;
+        internal System.Windows.Forms.ComboBox TLAuthUserCombo;
+        internal System.Windows.Forms.Label labelAccountTimeLine;
+        internal System.Windows.Forms.Button btnStolen;
+        internal System.Windows.Forms.Label lblStolen;
+        internal System.Windows.Forms.Label Label1;
+        private System.Windows.Forms.TextBox numericAutoRetryInterval;
+        private System.Windows.Forms.Label labelAutoRetryInterval;
+        private System.Windows.Forms.CheckBox CheckUnfollowEvent;
     }
 }

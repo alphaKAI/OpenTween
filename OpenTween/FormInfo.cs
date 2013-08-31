@@ -118,10 +118,11 @@ namespace OpenTween
             LabelInformation.Refresh();
         }
 
-        /// <summary>
-        /// ダイアログに表示されるユーザー向けメッセージを設定あるいは取得する
-        /// </summary>
-        /// <returns>現在設定されているメッセージ</returns>
+        ///<summary>
+        ///ダイアログに表示されるユーザー向けメッセージを設定あるいは取得する
+        ///</summary>
+        ///<param name="msg">表示するメッセージ</param>
+        ///<returns>現在設定されているメッセージ</returns>
         public string InfoMessage
         {
             get { return _msg; }
@@ -132,10 +133,11 @@ namespace OpenTween
             }
         }
 
-        /// <summary>
-        /// Servicerへ渡すパラメータ
-        /// </summary>
-        /// <returns>現在設定されているServicerへ渡すパラメータ</returns>
+        ///<summary>
+        ///Servicerへ渡すパラメータ
+        ///</summary>
+        ///<param name="args">Servicerへ渡すパラメータ</param>
+        ///<returns>現在設定されているServicerへ渡すパラメータ</returns>
         public object Argument
         {
             get { return _arg; }

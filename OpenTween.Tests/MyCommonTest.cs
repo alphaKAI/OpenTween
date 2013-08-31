@@ -30,7 +30,6 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Runtime.Serialization;
-using System.IO;
 
 namespace OpenTween
 {
@@ -67,6 +66,18 @@ namespace OpenTween
 
             MyCommon.MoveArrayItem(copy, idx_fr, idx_to);
             return copy;
+        }
+
+        [Test]
+        public void EncryptStringTest()
+        {
+            var str = "hogehoge";
+
+            var crypto = MyCommon.EncryptString(str);
+            Assert.That(crypto, Is.Not.EqualTo(str));
+
+            var decrypt = MyCommon.DecryptString(crypto);
+            Assert.That(decrypt, Is.EqualTo(str));
         }
 
         [TestCase(new byte[] { 0x01, 0x02 }, 3, Result = new byte[] { 0x01, 0x02, 0x00 })]
@@ -161,18 +172,6 @@ namespace OpenTween
             Assert.That(MyCommon.ReplaceAppName(str, "OpenTween"), Is.EqualTo(except));
         }
 
-        [TestCase("1.0.0.0", "1.0.0")]
-        [TestCase("1.0.0.1", "1.0.1-beta1")]
-        [TestCase("1.0.0.9", "1.0.1-beta9")]
-        [TestCase("1.0.1.0", "1.0.1")]
-        [TestCase("1.0.9.1", "1.1.0-beta1")]
-        [TestCase("1.1.0.0", "1.1.0")]
-        [TestCase("1.9.9.1", "2.0.0-beta1")]
-        public void GetReadableVersionTest(string fileVersion, string expect)
-        {
-            Assert.That(OpenTween.MyCommon.GetReadableVersion(fileVersion), Is.EqualTo(expect));
-        }
-
         public static object[] GetStatusUrlTest1_TestCase =
         {
             new object[] {
@@ -195,28 +194,6 @@ namespace OpenTween
         public void GetStatusUrlTest2(string screenName, long statusId, string except)
         {
             Assert.That(MyCommon.GetStatusUrl(screenName, statusId), Is.EqualTo(except));
-        }
-
-        [Test]
-        [Platform("Win")]
-        public void GetErrorLogPathTestWindows()
-        {
-            var mockAssembly = Substitute.For<_Assembly>();
-            mockAssembly.Location.Returns(@"C:\hogehoge\OpenTween\OpenTween.exe");
-            MyCommon.EntryAssembly = mockAssembly;
-
-            Assert.That(MyCommon.GetErrorLogPath(), Is.SamePath(@"C:\hogehoge\OpenTween\ErrorLogs\"));
-        }
-
-        [Test]
-        [Platform(Exclude = "Win")]
-        public void GetErrorLogPathTestOther()
-        {
-            var mockAssembly = Substitute.For<_Assembly>();
-            mockAssembly.Location.Returns(@"/hogehoge/OpenTween/OpenTween.exe");
-            MyCommon.EntryAssembly = mockAssembly;
-
-            Assert.That(MyCommon.GetErrorLogPath(), Is.SamePath(@"/hogehoge/OpenTween/ErrorLogs/"));
         }
     }
 }

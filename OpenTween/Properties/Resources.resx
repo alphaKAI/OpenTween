@@ -172,9 +172,6 @@
   <data name="ButtonOK_ClickText3" xml:space="preserve">
     <value>正規表現エラー：</value>
   </data>
-  <data name="ChangeLog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChangeLog.txt;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="CheckNewVersionText1" xml:space="preserve">
     <value>%AppName%更新確認</value>
   </data>
@@ -602,7 +599,7 @@
     <value>例外 {0}: {1}</value>
   </data>
   <data name="UnhandledExceptionText9" xml:space="preserve">
-    <value>エラーが発生しました。ごめんなさい。ログをexeファイルのある場所に {0} として作ったので、{1}まで送っていただけると助かります。{3}ご面倒なら{2}までお知らせ頂くだけでも助かります。{3}「はい」ボタンをクリックするとログを開きます。ログを開かない場合は「いいえ」、このまま終了する場合は「キャンセル」ボタンをクリックしてください。</value>
+    <value>エラーが発生しました。ごめんなさい。{3}ログをexeファイルのあるフォルダに {0} として作ったので、{1}まで送信して頂くか、{3}ご面倒なら{2}までお知らせ頂けると助かります。{3}「はい」ボタンをクリックするとログを開きます。ログを開かない場合は「いいえ」、このまま終了する場合は「キャンセル」ボタンをクリックしてください。</value>
   </data>
   <data name="UpdateFollowersMenuItem1_ClickText1" xml:space="preserve">
     <value>Followers取得中...</value>
@@ -758,10 +755,10 @@
     <value>最新発言の取得に失敗しました</value>
   </data>
   <data name="RtCountText1" xml:space="preserve">
-    <value>回Retweetされています</value>
+    <value>{0}回Retweet/{1}回Favoriteされています</value>
   </data>
   <data name="RtCountText2" xml:space="preserve">
-    <value>Retweetカウントの取得に失敗しました</value>
+    <value>Retweet/Favoriteカウントの取得に失敗しました</value>
   </data>
   <data name="PubSearchPeriod_ValidatingText1" xml:space="preserve">
     <value>更新間隔には数値（0または30～6000）を指定してください。</value>
@@ -773,7 +770,7 @@
     <value>プロフィール取得中・・・</value>
   </data>
   <data name="RtCountMenuItem_ClickText1" xml:space="preserve">
-    <value>Retweetカウント取得中・・・</value>
+    <value>Retweet/Favoriteカウント取得中・・・</value>
   </data>
   <data name="FollowCommandText1" xml:space="preserve">
     <value>フォローしています・・・</value>
@@ -1001,7 +998,7 @@
     <value>再生数:</value>
   </data>
   <data name="FavoriteLimitCountText" xml:space="preserve">
-    <value>一度にFav追加が実行できるのは250件までです</value>
+    <value>一度に250件より多くのFav追加を実行します。よろしいですか？</value>
   </data>
   <data name="TextSearchCountApi_Validating1" xml:space="preserve">
     <value>取得発言数は20～100件を指定してください。</value>
@@ -1041,9 +1038,6 @@
   </data>
   <data name="TabUsageTypeName_UserTimeline" xml:space="preserve">
     <value>UserTimeline</value>
-  </data>
-  <data name="TranslateDefaultLanguage" xml:space="preserve">
-    <value>ja</value>
   </data>
   <data name="SettingAPIUse2" xml:space="preserve">
     <value>UserStream有効時の消費API数 :  {0} / h</value>
@@ -1132,7 +1126,7 @@
   <data name="BrowserStartFailed" xml:space="preserve">
     <value>ブラウザの起動に失敗しました。エラーコード: {0}</value>
   </data>
-  <data name="SearchSimilarImageText" xml:space="preserve">
-    <value>類似画像を検索</value>
+  <data name="ChangeLog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\ChangeLog.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

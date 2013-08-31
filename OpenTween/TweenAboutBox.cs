@@ -33,6 +33,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace OpenTween
 {
@@ -52,12 +53,12 @@ namespace OpenTween
             // TODO: [プロジェクト] メニューの下にある [プロジェクト プロパティ] ダイアログの [アプリケーション] ペインで、アプリケーションのアセンブリ情報を 
             //    カスタマイズします。
             this.LabelProductName.Text = Application.ProductName;
-            this.LabelVersion.Text = String.Format(Properties.Resources.TweenAboutBox_LoadText2, MyCommon.GetReadableVersion());
+            this.LabelVersion.Text = String.Format(Properties.Resources.TweenAboutBox_LoadText2, MyCommon.fileVersion);
             this.LabelCopyright.Text = GetApplicationAttribute<AssemblyCopyrightAttribute>().Copyright;
             this.LabelCompanyName.Text = Application.CompanyName;
             this.TextBoxDescription.Text = GetApplicationAttribute<AssemblyDescriptionAttribute>().Description;
-            this.ChangeLog.Text = Properties.Resources.ChangeLog;
-            this.TextBoxDescription.Text = string.Format(Properties.Resources.Description, ApplicationSettings.FeedbackTwitterName, ApplicationSettings.FeedbackEmailAddress);
+            this.ChangeLog.Text = Regex.Replace(Properties.Resources.ChangeLog, @"([^\r])\n", "$1\r\n");
+            this.TextBoxDescription.Text = Regex.Replace(string.Format(Properties.Resources.Description, ApplicationSettings.FeedbackTwitterName, ApplicationSettings.FeedbackEmailAddress), @"([^\r])\n", "$1\r\n");
         }
 
         protected T GetApplicationAttribute<T>() where T : Attribute

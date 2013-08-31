@@ -44,7 +44,6 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
-using OpenTween.Api;
 
 namespace OpenTween
 {
@@ -95,20 +94,6 @@ namespace OpenTween
             Invalid,
             Picture,
             MultiMedia,
-        }
-
-        public enum UrlConverter
-        {
-            TinyUrl,
-            Isgd,
-            Twurl,
-            Bitly,
-            Jmp,
-            Uxnu,
-            //特殊
-            Nicoms,
-            //廃止
-            Unu = -1,
         }
 
         public enum HITRESULT
@@ -199,26 +184,18 @@ namespace OpenTween
             Favorite = 1,
             Unfavorite = 2,
             Follow = 4,
-            ListMemberAdded = 8,
-            ListMemberRemoved = 16,
-            Block = 32,
-            Unblock = 64,
-            UserUpdate = 128,
-            Deleted = 256,
-            ListCreated = 512,
-            ListUpdated = 1024,
-            Unfollow = 2048,
-            ListUserSubscribed = 4096,
-            ListUserUnsubscribed = 8192,
+            Unfollow = 8,
+            ListMemberAdded = 16,
+            ListMemberRemoved = 32,
+            Block = 64,
+            Unblock = 128,
+            UserUpdate = 256,
+            Deleted = 512,
+            ListCreated = 1024,
+            ListUpdated = 2048,
 
-            All = (None | Favorite | Unfavorite | Follow | ListMemberAdded | ListMemberRemoved |
-                   Block | Unblock | UserUpdate | Deleted | ListCreated | ListUpdated | Unfollow |
-                   ListUserSubscribed | ListUserUnsubscribed),
-        }
-
-        public static string GetErrorLogPath()
-        {
-            return Path.Combine(Path.GetDirectoryName(MyCommon.EntryAssembly.Location), "ErrorLogs");
+            All = (None | Favorite | Unfavorite | Follow | Unfollow | ListMemberAdded | ListMemberRemoved |
+                   Block | Unblock | UserUpdate | Deleted | ListCreated | ListUpdated),
         }
 
         public static void TraceOut(Exception ex, string Message)
@@ -237,14 +214,8 @@ namespace OpenTween
             lock (LockObj)
             {
                 if (!OutputFlag) return;
-
-                var logPath = MyCommon.GetErrorLogPath();
-                if (!Directory.Exists(logPath))
-                    Directory.CreateDirectory(logPath);
-
                 var now = DateTime.Now;
                 var fileName = string.Format("{0}Trace-{1:0000}{2:00}{3:00}-{4:00}{5:00}{6:00}.log", GetAssemblyName(), now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second);
-                fileName = Path.Combine(logPath, fileName);
 
                 using (var writer = new StreamWriter(fileName))
                 {
@@ -352,14 +323,8 @@ namespace OpenTween
             lock (LockObj)
             {
                 var IsTerminatePermission = true;
-
-                var logPath = MyCommon.GetErrorLogPath();
-                if (!Directory.Exists(logPath))
-                    Directory.CreateDirectory(logPath);
-
                 var now = DateTime.Now;
                 var fileName = string.Format("{0}-{1:0000}{2:00}{3:00}-{4:00}{5:00}{6:00}.log", GetAssemblyName(), now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second);
-                fileName = Path.Combine(logPath, fileName);
 
                 using (var writer = new StreamWriter(fileName))
                 {
@@ -405,7 +370,7 @@ namespace OpenTween
         /// マルチバイト文字のコードはUTF-8またはUnicodeで自動的に判断します。
         /// </newpara>
         /// </summary>
-        /// <param name="_input">エンコード対象のURL</param>
+        /// <param name = input>エンコード対象のURL</param>
         /// <returns>マルチバイト文字の部分をUTF-8/%xx形式でエンコードした文字列を返します。</returns>
 
         public static string urlEncodeMultibyteChar(string _input)
@@ -518,6 +483,115 @@ namespace OpenTween
             }
 
             values[idx_to] = moved_value;
+        }
+
+        public static string EncryptString(string str)
+        {
+            if (string.IsNullOrEmpty(str)) return "";
+
+            //文字列をバイト型配列にする
+            var bytesIn = Encoding.UTF8.GetBytes(str);
+
+            //DESCryptoServiceProviderオブジェクトの作成
+            using (var des = new DESCryptoServiceProvider())
+            {
+                //共有キーと初期化ベクタを決定
+                //パスワードをバイト配列にする
+                var bytesKey = Encoding.UTF8.GetBytes("_tween_encrypt_key_");
+                //共有キーと初期化ベクタを設定
+                des.Key = ResizeBytesArray(bytesKey, des.Key.Length);
+                des.IV = ResizeBytesArray(bytesKey, des.IV.Length);
+
+                MemoryStream msOut = null;
+                ICryptoTransform desdecrypt = null;
+
+                try
+                {
+                    //暗号化されたデータを書き出すためのMemoryStream
+                    msOut = new MemoryStream();
+
+                    //DES暗号化オブジェクトの作成
+                    desdecrypt = des.CreateEncryptor();
+
+                    //書き込むためのCryptoStreamの作成
+                    using (CryptoStream cryptStream = new CryptoStream(msOut, desdecrypt, CryptoStreamMode.Write))
+                    {
+                        //Disposeが重複して呼ばれないようにする
+                        MemoryStream msTmp = msOut;
+                        msOut = null;
+                        desdecrypt = null;
+
+                        //書き込む
+                        cryptStream.Write(bytesIn, 0, bytesIn.Length);
+                        cryptStream.FlushFinalBlock();
+                        //暗号化されたデータを取得
+                        var bytesOut = msTmp.ToArray();
+
+                        //Base64で文字列に変更して結果を返す
+                        return Convert.ToBase64String(bytesOut);
+                    }
+                }
+                finally
+                {
+                    if (msOut != null) msOut.Dispose();
+                    if (desdecrypt != null) desdecrypt.Dispose();
+                }
+            }
+        }
+
+        public static string DecryptString(string str)
+        {
+            if (string.IsNullOrEmpty(str)) return "";
+
+            //DESCryptoServiceProviderオブジェクトの作成
+            using (var des = new System.Security.Cryptography.DESCryptoServiceProvider())
+            {
+                //共有キーと初期化ベクタを決定
+                //パスワードをバイト配列にする
+                var bytesKey = Encoding.UTF8.GetBytes("_tween_encrypt_key_");
+                //共有キーと初期化ベクタを設定
+                des.Key = ResizeBytesArray(bytesKey, des.Key.Length);
+                des.IV = ResizeBytesArray(bytesKey, des.IV.Length);
+
+                //Base64で文字列をバイト配列に戻す
+                var bytesIn = Convert.FromBase64String(str);
+
+                MemoryStream msIn = null;
+                ICryptoTransform desdecrypt = null;
+                CryptoStream cryptStreem = null;
+
+                try
+                {
+                    //暗号化されたデータを読み込むためのMemoryStream
+                    msIn = new MemoryStream(bytesIn);
+                    //DES復号化オブジェクトの作成
+                    desdecrypt = des.CreateDecryptor();
+                    //読み込むためのCryptoStreamの作成
+                    cryptStreem = new CryptoStream(msIn, desdecrypt, CryptoStreamMode.Read);
+
+                    //Disposeが重複して呼ばれないようにする
+                    msIn = null;
+                    desdecrypt = null;
+
+                    //復号化されたデータを取得するためのStreamReader
+                    using (StreamReader srOut = new StreamReader(cryptStreem, Encoding.UTF8))
+                    {
+                        //Disposeが重複して呼ばれないようにする
+                        cryptStreem = null;
+
+                        //復号化されたデータを取得する
+                        var result = srOut.ReadToEnd();
+
+                        return result;
+                    }
+                }
+                finally
+                {
+                    if (msIn != null) msIn.Dispose();
+                    if (desdecrypt != null) desdecrypt.Dispose();
+                    if (cryptStreem != null) cryptStreem.Dispose();
+                }
+            }
         }
 
         public static byte[] ResizeBytesArray(byte[] bytes,
@@ -645,9 +719,11 @@ namespace OpenTween
         public static T CreateDataFromJson<T>(string content)
         {
             T data;
-            var buf = Encoding.Unicode.GetBytes(content);
-            using (var stream = new MemoryStream(buf))
+            using (var stream = new MemoryStream())
             {
+                var buf = Encoding.Unicode.GetBytes(content);
+                stream.Write(Encoding.Unicode.GetBytes(content), offset: 0, count: buf.Length);
+                stream.Seek(offset: 0, loc: SeekOrigin.Begin);
                 data = (T)((new DataContractJsonSerializer(typeof(T))).ReadObject(stream));
             }
             return data;
@@ -739,7 +815,7 @@ namespace OpenTween
         /// <returns>
         /// 生成されたバージョン番号の文字列
         /// </returns>
-        public static string GetReadableVersion(string fileVersion = null)
+        /*public static string GetReadableVersion(string fileVersion = null)
         {
             if (fileVersion == null)
             {
@@ -777,7 +853,7 @@ namespace OpenTween
 
                 return string.Format("{0}.{1}.{2}-beta{3}", version[0], version[1], version[2], version[3]);
             }
-        }
+        }*/
 
         public const string TwitterUrl = "https://twitter.com/";
 

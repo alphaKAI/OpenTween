@@ -39,14 +39,11 @@ using XmlException = System.Xml.XmlException;
 
 namespace OpenTween
 {
-	public class TwitPic : HttpConnectionOAuthEcho, IMultimediaShareService
+	public class Plixi : HttpConnectionOAuthEcho, IMultimediaShareService
 	{
 		private string[] pictureExt = new string[] { ".jpg", ".jpeg", ".gif", ".png" };
 
-		private string[] multimediaExt = new string[] { ".avi", ".wmv", ".flv", ".m4v", ".mov", ".mp4", ".rm", ".mpeg", ".mpg", ".3gp", ".3g2" };
-
-		private const long MaxFileSize = 10 * 1024 * 1024; // Image only
-		// Multimedia filesize limit unknown. But length limit is 1:30.
+		private const long MaxFileSize = 5 * 1024 * 1024;
 
         private Twitter tw;
 
@@ -58,7 +55,6 @@ namespace OpenTween
 				return "Err:File isn't specified.";
 			if ( string.IsNullOrEmpty( message ) )
 				message = "";
-
 			FileInfo mediaFile;
 			try
 			{
@@ -73,7 +69,7 @@ namespace OpenTween
 
 			string content = "";
 			HttpStatusCode ret;
-			// TwitPicへの投稿
+			// Plixiへの投稿
 			try
 			{
 				ret = this.UploadFile( mediaFile, message, ref content );
@@ -83,14 +79,14 @@ namespace OpenTween
 				return "Err:" + ex.Message;
 			}
 			string url = "";
-			if ( ret == HttpStatusCode.OK )
+			if ( ret == HttpStatusCode.Created )
 			{
 				XmlDocument xd = new XmlDocument();
 				try
 				{
 					xd.LoadXml( content );
-					// URLの取得
-					url = xd.SelectSingleNode( "/image/url" ).InnerText;
+					// MediaUrlの取得
+					url = xd.ChildNodes.Item( 0 ).ChildNodes[ 2 ].InnerText;
 				}
 				catch ( XmlException ex )
 				{
@@ -102,21 +98,21 @@ namespace OpenTween
 				}
 			}
 			else
+			{
 				return "Err:" + ret.ToString();
-
+			}
 			// アップロードまでは成功
 			filePath = "";
-			if ( string.IsNullOrEmpty( message ) )
-				message = "";
 			if ( string.IsNullOrEmpty( url ) )
 				url = "";
+			if ( string.IsNullOrEmpty( message ) )
+				message = "";
 			// Twitterへの投稿
 			// 投稿メッセージの再構成
 			if ( message.Length + AppendSettingDialog.Instance.TwitterConfiguration.CharactersReservedPerMedia + 1 > 140 )
 				message = message.Substring( 0, 140 - AppendSettingDialog.Instance.TwitterConfiguration.CharactersReservedPerMedia - 1 ) + " " + url;
 			else
 				message += " " + url;
-
             return tw.PostStatusRetry(message, reply_to, isDraft, owner);
 		}
 
@@ -132,23 +128,19 @@ namespace OpenTween
 				throw new ArgumentException( "File is too large." );
 
 			Dictionary< string, string > param = new Dictionary< string, string >();
-			param.Add( "key", ApplicationSettings.TwitpicApiKey );
+			param.Add( "api_key", ApplicationSettings.LockerzApiKey );
 			param.Add( "message", message );
+			param.Add( "isoauth", "true" );
 			List< KeyValuePair< string, FileInfo > > binary = new List< KeyValuePair< string, FileInfo > >();
 			binary.Add( new KeyValuePair< string, FileInfo >( "media", mediaFile ) );
-			if ( this.GetFileType( mediaFile.Extension ) == UploadFileType.Picture )
-				this.InstanceTimeout = 60000; // タイムアウト60秒
-			else
-				this.InstanceTimeout = 120000;
+			this.InstanceTimeout = 60000; // タイムアウト60秒
 
-			return this.GetContent( HttpConnection.PostMethod, new Uri( "http://api.twitpic.com/2/upload.xml" ), param, binary, ref content, null, null );
+			return base.GetContent( HttpConnection.PostMethod, new Uri( "http://api.plixi.com/api/upload.aspx" ), param, binary, ref content, null, null );
 		}
 
 		public bool CheckValidExtension( string ext )
 		{
-			if ( Array.IndexOf( this.pictureExt, ext.ToLower() ) > -1 )
-				return true;
-			if ( Array.IndexOf( this.multimediaExt, ext.ToLower() ) > -1 )
+			if ( Array.IndexOf( pictureExt, ext.ToLower() ) > -1 )
 				return true;
 
 			return false;
@@ -156,31 +148,26 @@ namespace OpenTween
 
 		public string GetFileOpenDialogFilter()
 		{
-			return "Image Files(*" + string.Join( ";*", this.pictureExt ) + ")|*" + string.Join( ";*", this.pictureExt )
-			       + "|Videos(*" + string.Join( ";*", this.multimediaExt ) + ")|*" + string.Join( ";*", this.multimediaExt );
+			return "Image Files(*.gif;*.jpg;*.jpeg;*.png)|*.gif;*.jpg;*.jpeg;*.png";
 		}
 
 		public UploadFileType GetFileType( string ext )
 		{
-			if ( Array.IndexOf( this.pictureExt, ext.ToLower() ) > -1 )
+			if ( this.CheckValidExtension( ext ) )
 				return UploadFileType.Picture;
-			if ( Array.IndexOf( this.multimediaExt, ext.ToLower() ) > -1 )
-				return UploadFileType.MultiMedia;
 
 			return UploadFileType.Invalid;
 		}
 
 		public bool IsSupportedFileType( UploadFileType type )
 		{
-			return !type.Equals( UploadFileType.Invalid );
+			return type.Equals( UploadFileType.Picture );
 		}
 
 		public bool CheckValidFilesize( string ext, long fileSize )
 		{
-			if ( Array.IndexOf( this.pictureExt, ext.ToLower() ) > -1 )
-				return fileSize <= TwitPic.MaxFileSize;
-			if ( Array.IndexOf( this.multimediaExt, ext.ToLower() ) > -1 )
-				return true; // Multimedia : no check
+			if ( this.CheckValidExtension( ext ) )
+				return fileSize <= Plixi.MaxFileSize;
 
 			return false;
 		}
@@ -190,12 +177,12 @@ namespace OpenTween
 			return true;
 		}
 
-        public TwitPic(Twitter twitter, Twitter tltwitter)
+        public Plixi(Twitter twitter, Twitter tltwitter)
 			: base( new Uri( "http://api.twitter.com/" ), new Uri( "https://api.twitter.com/1/account/verify_credentials.json" ) )
 		{
             this.tw = twitter;
             this.tltw = tltwitter;
-            this.Initialize(tltw.ConsumerKey, tltw.ConsumerSecret, tltw.AccessToken, tltw.AccessTokenSecret, "", "");
+            base.Initialize(tltw.ConsumerKey, tltw.ConsumerSecret, tltw.AccessToken, tltw.AccessTokenSecret, "", "");
 		}
 	}
 }

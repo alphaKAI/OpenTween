@@ -30,22 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyLists));
-            this.MenuItemReload = new System.Windows.Forms.ToolStripMenuItem();
+            this.更新RToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListRefreshButton = new System.Windows.Forms.Button();
             this.ListsCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.ContextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.MenuItemAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.追加AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.削除DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.CloseButton = new System.Windows.Forms.Button();
             this.ContextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // MenuItemReload
+            // 更新RToolStripMenuItem
             // 
-            this.MenuItemReload.Name = "MenuItemReload";
-            resources.ApplyResources(this.MenuItemReload, "MenuItemReload");
-            this.MenuItemReload.Click += new System.EventHandler(this.更新RToolStripMenuItem_Click);
+            this.更新RToolStripMenuItem.Name = "更新RToolStripMenuItem";
+            resources.ApplyResources(this.更新RToolStripMenuItem, "更新RToolStripMenuItem");
+            this.更新RToolStripMenuItem.Click += new System.EventHandler(this.更新RToolStripMenuItem_Click);
             // 
             // ListRefreshButton
             // 
@@ -67,25 +67,25 @@
             // ContextMenuStrip1
             // 
             this.ContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemAdd,
-            this.MenuItemDelete,
+            this.追加AToolStripMenuItem,
+            this.削除DToolStripMenuItem,
             this.ToolStripMenuItem1,
-            this.MenuItemReload});
+            this.更新RToolStripMenuItem});
             this.ContextMenuStrip1.Name = "ContextMenuStrip1";
             resources.ApplyResources(this.ContextMenuStrip1, "ContextMenuStrip1");
             this.ContextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStrip1_Opening);
             // 
-            // MenuItemAdd
+            // 追加AToolStripMenuItem
             // 
-            this.MenuItemAdd.Name = "MenuItemAdd";
-            resources.ApplyResources(this.MenuItemAdd, "MenuItemAdd");
-            this.MenuItemAdd.Click += new System.EventHandler(this.追加AToolStripMenuItem_Click);
+            this.追加AToolStripMenuItem.Name = "追加AToolStripMenuItem";
+            resources.ApplyResources(this.追加AToolStripMenuItem, "追加AToolStripMenuItem");
+            this.追加AToolStripMenuItem.Click += new System.EventHandler(this.追加AToolStripMenuItem_Click);
             // 
-            // MenuItemDelete
+            // 削除DToolStripMenuItem
             // 
-            this.MenuItemDelete.Name = "MenuItemDelete";
-            resources.ApplyResources(this.MenuItemDelete, "MenuItemDelete");
-            this.MenuItemDelete.Click += new System.EventHandler(this.削除DToolStripMenuItem_Click);
+            this.削除DToolStripMenuItem.Name = "削除DToolStripMenuItem";
+            resources.ApplyResources(this.削除DToolStripMenuItem, "削除DToolStripMenuItem");
+            this.削除DToolStripMenuItem.Click += new System.EventHandler(this.削除DToolStripMenuItem_Click);
             // 
             // ToolStripMenuItem1
             // 
@@ -123,12 +123,12 @@
 
         #endregion
 
-        internal System.Windows.Forms.ToolStripMenuItem MenuItemReload;
+        internal System.Windows.Forms.ToolStripMenuItem 更新RToolStripMenuItem;
         internal System.Windows.Forms.Button ListRefreshButton;
         internal System.Windows.Forms.CheckedListBox ListsCheckedListBox;
         internal System.Windows.Forms.ContextMenuStrip ContextMenuStrip1;
-        internal System.Windows.Forms.ToolStripMenuItem MenuItemAdd;
-        internal System.Windows.Forms.ToolStripMenuItem MenuItemDelete;
+        internal System.Windows.Forms.ToolStripMenuItem 追加AToolStripMenuItem;
+        internal System.Windows.Forms.ToolStripMenuItem 削除DToolStripMenuItem;
         internal System.Windows.Forms.ToolStripSeparator ToolStripMenuItem1;
         internal System.Windows.Forms.Button CloseButton;
     }

@@ -30,23 +30,23 @@ namespace OpenTween
     /// アプリケーション固有の情報を格納します
     /// </summary>
     /// <remarks>
-    /// OpenTween の派生版を作る方法は http://sourceforge.jp/projects/opentween/wiki/HowToFork を参照して下さい。
+    /// OpenTweenA の派生版を作る方法は OpenTween と同じように http://sourceforge.jp/projects/opentween/wiki/HowToFork を参照して下さい。
     /// </remarks>
     internal sealed class ApplicationSettings
     {
         //=====================================================================
         // フィードバック送信先
         // 異常終了時などにエラーログ等とともに表示されます。
-        
+
         /// <summary>
         /// フィードバック送信先 (メール)
         /// </summary>
-        public const string FeedbackEmailAddress = "contact@re4k.info";
+        public const string FeedbackEmailAddress = "alpha.kai.net@alpha-kai-net.info";
 
         /// <summary>
         /// フィードバック送信先 (Twitter)
         /// </summary>
-        public const string FeedbackTwitterName = "@cn";
+        public const string FeedbackTwitterName = "@alpha_kai_NET";
 
         //=====================================================================
         // Web サイト
@@ -54,7 +54,7 @@ namespace OpenTween
         /// <summary>
         /// 「ヘルプ」メニューの「(アプリ名) ウェブサイト」クリック時に外部ブラウザで表示する URL
         /// </summary>
-        public const string WebsiteUrl = "https://github.com/rhenium/OpenTween";
+        public const string WebsiteUrl = "http://sourceforge.jp/projects/opentween/wiki/FrontPage";
 
         /// <summary>
         /// 「ヘルプ」メニューの「ショートカットキー一覧」クリック時に外部ブラウザで表示する URL
@@ -72,19 +72,18 @@ namespace OpenTween
         /// </summary>
         /// <remarks>
         /// version.txt のフォーマットについては http://sourceforge.jp/projects/opentween/wiki/VersionTxt を参照。
-        /// 派生プロジェクトなどでこの機能を無効にする場合は null をセットして下さい。
         /// </remarks>
-        public static readonly string VersionInfoUrl = "http://example.com/version.txt";
+        public const string VersionInfoUrl = "http://re4k.info/build/OpenTweenA/version.txt";
 
         //=====================================================================
         // Twitter
         // https://dev.twitter.com/ から取得できます。
 
         /// <summary>
-        /// Twitter コンシューマーキー
+        /// Twitter 標準 コンシューマーキー
         /// </summary>
-        public const string TwitterConsumerKey = "Hnds3Xbg9H8eHOUq1R9hFg";
-        public const string TwitterConsumerSecret = "R5wYVHpJgAvUmYGVGdftrpPy9iFUVEwZE1vBsI4";
+        public const string TwitterDefaultConsumerKey = "N7R7UE6UDjuiTgAWEhA";
+        public const string TwitterDefaultConsumerSecret = "9zhzUB0HRECSBvAF8KWdT1WktnB92iG1wuBb048OhE";
 
         //=====================================================================
         // Lockerz (旧Plixi)
@@ -93,7 +92,7 @@ namespace OpenTween
         /// <summary>
         /// Lockerz APIキー
         /// </summary>
-        public const string LockerzApiKey = "91083b55-f8f9-4b91-a0b3-f999e2e45af2";
+        public const string LockerzApiKey = "13d9bba7-84a7-488b-a5cc-d71857e45675";
 
         //=====================================================================
         // Twitpic
@@ -102,7 +101,7 @@ namespace OpenTween
         /// <summary>
         /// Twitpic APIキー
         /// </summary>
-        public const string TwitpicApiKey = "bbc6449ceac87ef10c546e4a0ca06ef4";
+        public const string TwitpicApiKey = "9c0f0653ca6fdded658eb98fad61fa80";
 
         //=====================================================================
         // TwitVideo
@@ -120,7 +119,7 @@ namespace OpenTween
         /// <summary>
         /// yfrog APIキー
         /// </summary>
-        public const string YfrogApiKey = "HIDP42ZO6314ee2218e2995662bad5ae320c32f1";
+        public const string YfrogApiKey = "0VZ48S5Ifbb92a499ba7844a6dda9c3d2e6c87a2";
 
         //=====================================================================
         // Foursquare
@@ -129,26 +128,12 @@ namespace OpenTween
         /// <summary>
         /// Foursquare Client Id
         /// </summary>
-        public const string FoursquareClientId = "5H3K5YQPT55DNQUFEOAJFNJA5D01ZJGO2ITEAJ3ASRIDONUB";
+        public const string FoursquareClientId = "JHCXRTFQD2NBAJZHQ1ADQII3M5RLRMSW4DSNCC5TXQ13HNV3";
 
         /// <summary>
         /// Foursquare Client Secret
         /// </summary>
-        public const string FoursquareClientSecret = "JFRHP1L451M3AEPF11UZLTIIUZCZTZRVHVOWB5TQ0AJOVPBB";
-
-        //=====================================================================
-        // bit.ly
-        // https://bitly.com/a/account から取得できます。
-
-        /// <summary>
-        /// bit.ly ログイン名
-        /// </summary>
-        public const string BitlyLoginId = "opentween";
-
-        /// <summary>
-        /// bit.ly APIキー
-        /// </summary>
-        public const string BitlyApiKey = "R_76319a25e2420b8d2c42e812fe177d8b";
+        public const string FoursquareClientSecret = "U2BVK1J4KVPFIUSZCCRNKN0MBN4KDEBSDRDTARCDTOT1DPA0";
 
         //=====================================================================
         // TINAMI
@@ -157,15 +142,6 @@ namespace OpenTween
         /// <summary>
         /// TINAMI APIキー
         /// </summary>
-        public const string TINAMIApiKey = "4f48bb4858d36";
-
-        //=====================================================================
-        // Windows Azure Marketplace
-        // https://datamarket.azure.com/account/keys から取得できます。
-
-        /// <summary>
-        /// Windows Azure Marketplace アカウントキー
-        /// </summary>
-        public const string AzureMarketplaceKey = "UlOODyR2rVH0lfweya1VuY5KjE7L0ZjvQKQWlYgWsPw=";
+        public const string TINAMIApiKey = "4fc9d8d562ab1";
     }
 }

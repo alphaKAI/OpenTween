@@ -102,7 +102,6 @@ namespace OpenTween
         }
 
         [Test]
-        [Ignore]
         public void CancelAsyncTest()
         {
             using (var thumbbox = new TweetThumbnail())
@@ -255,7 +254,6 @@ namespace OpenTween
         }
 
         [Test]
-        [Platform(Exclude = "Net", Reason = "時々実行が停止しキャンセルもできなくなる。原因不明。")]
         public void ScrollTest()
         {
             var post = new PostClass

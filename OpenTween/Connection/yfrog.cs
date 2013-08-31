@@ -5,6 +5,7 @@
 //           (c) 2010-2011 anis774 (@anis774) <http://d.hatena.ne.jp/anis774/>
 //           (c) 2010-2011 fantasticswallow (@f_swallow) <http://twitter.com/f_swallow>
 //           (c) 2011      spinor (@tplantd) <http://d.hatena.ne.jp/spinor/>
+//           (c) 2012      re4k (@re4k) <http://re4k.info/>
 // All rights reserved.
 // 
 // This file is part of OpenTween.
@@ -24,19 +25,17 @@
 // the Free Software Foundation, Inc., 51 Franklin Street - Fifth Floor,
 // Boston, MA 02110-1301, USA.
 
-using HttpConnectionOAuthEcho = OpenTween.HttpConnectionOAuthEcho;
-using IMultimediaShareService = OpenTween.IMultimediaShareService;
-using FileInfo = System.IO.FileInfo;
-using NotSupportedException = System.NotSupportedException;
-using HttpStatusCode = System.Net.HttpStatusCode;
+using System.Collections.Generic; // for Dictionary<TKey, TValue>, List<T>, KeyValuePair<TKey, TValue>
+using ArgumentException = System.ArgumentException;
+using Array = System.Array;
 using Exception = System.Exception;
+using FileInfo = System.IO.FileInfo;
+using HttpStatusCode = System.Net.HttpStatusCode;
+using NotSupportedException = System.NotSupportedException;
+using UploadFileType = OpenTween.MyCommon.UploadFileType;
+using Uri = System.Uri;
 using XmlDocument = System.Xml.XmlDocument;
 using XmlException = System.Xml.XmlException;
-using ArgumentException = System.ArgumentException;
-using System.Collections.Generic; // for Dictionary<TKey, TValue>, List<T>, KeyValuePair<TKey, TValue>
-using Uri = System.Uri;
-using Array = System.Array;
-using UploadFileType = OpenTween.MyCommon.UploadFileType;
 
 namespace OpenTween
 {
@@ -46,9 +45,11 @@ namespace OpenTween
 
 		private const long MaxFileSize = 5 * 1024 * 1024;
 
-		private Twitter tw;
+        private Twitter tw;
 
-		public string Upload( ref string filePath, ref string message, long reply_to )
+        private Twitter tltw;
+
+        public string Upload(ref string filePath, ref string message, long reply_to, bool isDraft, TweenMain owner)
 		{
 			if ( string.IsNullOrEmpty( filePath ) )
 				return "Err:File isn't exists.";
@@ -114,7 +115,7 @@ namespace OpenTween
 			else
 				message += " " + url;
 
-			return this.tw.PostStatus( message, 0 );
+            return tw.PostStatusRetry(message, reply_to, isDraft, owner);
 		}
 
 		private HttpStatusCode UploadFile( FileInfo mediaFile, string message, ref string content )
@@ -172,11 +173,13 @@ namespace OpenTween
 			return false;
 		}
 
-        public yfrog(Twitter twitter)
-            : base(twitter.Credential, new Uri("http://api.twitter.com/"), new Uri("https://api.twitter.com/1.1/account/verify_credentials.xml"))
-        {
+        public yfrog(Twitter twitter, Twitter tltwitter)
+			: base( new Uri( "http://api.twitter.com/" ), new Uri( "https://api.twitter.com/1/account/verify_credentials.xml" ) )
+		{
             this.tw = twitter;
-        }
+            this.tltw = tltwitter;
+            this.Initialize(tltw.ConsumerKey, tltw.ConsumerSecret, tltw.AccessToken, tltw.AccessTokenSecret, "", "");
+		}
 
 		public bool Configuration( string key, object value )
 		{

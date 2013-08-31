@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,7 +42,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -51,10 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\ApiLimitTest.cs" />
-    <Compile Include="Api\TwitterApiStatusTest.cs" />
-    <Compile Include="BingTest.cs" />
-    <Compile Include="FiltersClassTest.cs" />
+    <Compile Include="ApiInformationTest.cs" />
     <Compile Include="FoursquareTest.cs" />
     <Compile Include="LRUCacheDictionaryTest.cs" />
     <Compile Include="MyCommonTest.cs" />
@@ -66,12 +63,10 @@
     <Compile Include="Thumbnail\Services\MetaThumbnailServiceTest.cs" />
     <Compile Include="Thumbnail\Services\SimpleThumbnailServiceTest.cs" />
     <Compile Include="Thumbnail\Services\TinamiTest.cs" />
-    <Compile Include="ToolStripAPIGaugeTest.cs" />
     <Compile Include="TweetThumbnailTest.cs" />
-    <Compile Include="TwitterTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OpenTween\OpenTween.csproj">
+    <ProjectReference Include="..\OpenTween\OpenTweenA.csproj">
       <Project>{3D8995C7-BDF3-4273-9F9D-DDD902F6A101}</Project>
       <Name>OpenTween</Name>
     </ProjectReference>
@@ -89,6 +84,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

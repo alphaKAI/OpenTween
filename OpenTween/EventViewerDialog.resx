@@ -126,7 +126,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageUnfav.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 193</value>
+    <value>706, 192</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TabPageUnfav.TabIndex" type="System.Int32, mscorlib">
@@ -181,7 +181,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageFollow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 193</value>
+    <value>706, 192</value>
   </data>
   <data name="TabPageFollow.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -250,7 +250,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 193</value>
+    <value>706, 192</value>
   </data>
   <data name="TabPageAll.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -277,7 +277,7 @@
     <value>3, 3</value>
   </data>
   <data name="EventList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>700, 187</value>
+    <value>700, 186</value>
   </data>
   <data name="EventList.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -379,7 +379,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageFav.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 193</value>
+    <value>706, 192</value>
   </data>
   <data name="TabPageFav.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -400,7 +400,7 @@
     <value>1</value>
   </data>
   <data name="StatusLabelCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 17</value>
+    <value>110, 17</value>
   </data>
   <data name="StatusLabelCount.Text" xml:space="preserve">
     <value>StatusLabelCount</value>
@@ -466,7 +466,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPageAddLists.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 193</value>
+    <value>706, 192</value>
   </data>
   <data name="TabPageAddLists.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -484,13 +484,55 @@
     <value>TabEventType</value>
   </data>
   <data name="&gt;&gt;TabPageAddLists.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="TabEventType.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="TabEventType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="TabPageUnfollow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="TabPageUnfollow.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPageUnfollow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>706, 192</value>
+  </data>
+  <data name="TabPageUnfollow.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="TabPageUnfollow.Text" xml:space="preserve">
+    <value>Unfollow</value>
+  </data>
+  <data name="&gt;&gt;TabPageUnfollow.Name" xml:space="preserve">
+    <value>TabPageUnfollow</value>
+  </data>
+  <data name="&gt;&gt;TabPageUnfollow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageUnfollow.Parent" xml:space="preserve">
+    <value>TabEventType</value>
+  </data>
+  <data name="&gt;&gt;TabPageUnfollow.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="TabPageRemoveLists.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="TabPageRemoveLists.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPageRemoveLists.Size" type="System.Drawing.Size, System.Drawing">
+    <value>706, 192</value>
+  </data>
+  <data name="TabPageRemoveLists.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="TabPageRemoveLists.Text" xml:space="preserve">
+    <value>ListsMemberRemoved</value>
   </data>
   <data name="&gt;&gt;TabPageRemoveLists.Name" xml:space="preserve">
     <value>TabPageRemoveLists</value>
@@ -502,7 +544,22 @@
     <value>TabEventType</value>
   </data>
   <data name="&gt;&gt;TabPageRemoveLists.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
+  </data>
+  <data name="TabPageListsCreated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="TabPageListsCreated.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPageListsCreated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>706, 192</value>
+  </data>
+  <data name="TabPageListsCreated.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="TabPageListsCreated.Text" xml:space="preserve">
+    <value>ListsCreated</value>
   </data>
   <data name="&gt;&gt;TabPageListsCreated.Name" xml:space="preserve">
     <value>TabPageListsCreated</value>
@@ -514,7 +571,22 @@
     <value>TabEventType</value>
   </data>
   <data name="&gt;&gt;TabPageListsCreated.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <data name="TabPageBlock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="TabPageBlock.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPageBlock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>706, 192</value>
+  </data>
+  <data name="TabPageBlock.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="TabPageBlock.Text" xml:space="preserve">
+    <value>Block</value>
   </data>
   <data name="&gt;&gt;TabPageBlock.Name" xml:space="preserve">
     <value>TabPageBlock</value>
@@ -526,7 +598,22 @@
     <value>TabEventType</value>
   </data>
   <data name="&gt;&gt;TabPageBlock.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
+  </data>
+  <data name="TabPageUserUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="TabPageUserUpdate.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPageUserUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>706, 192</value>
+  </data>
+  <data name="TabPageUserUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="TabPageUserUpdate.Text" xml:space="preserve">
+    <value>UserUpdate</value>
   </data>
   <data name="&gt;&gt;TabPageUserUpdate.Name" xml:space="preserve">
     <value>TabPageUserUpdate</value>
@@ -538,7 +625,7 @@
     <value>TabEventType</value>
   </data>
   <data name="&gt;&gt;TabPageUserUpdate.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="TabEventType.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
@@ -560,114 +647,6 @@
   </data>
   <data name="&gt;&gt;TabEventType.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="TabPageRemoveLists.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="TabPageRemoveLists.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="TabPageRemoveLists.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 193</value>
-  </data>
-  <data name="TabPageRemoveLists.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="TabPageRemoveLists.Text" xml:space="preserve">
-    <value>ListsMemberRemoved</value>
-  </data>
-  <data name="&gt;&gt;TabPageRemoveLists.Name" xml:space="preserve">
-    <value>TabPageRemoveLists</value>
-  </data>
-  <data name="&gt;&gt;TabPageRemoveLists.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPageRemoveLists.Parent" xml:space="preserve">
-    <value>TabEventType</value>
-  </data>
-  <data name="&gt;&gt;TabPageRemoveLists.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="TabPageListsCreated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="TabPageListsCreated.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="TabPageListsCreated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 193</value>
-  </data>
-  <data name="TabPageListsCreated.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="TabPageListsCreated.Text" xml:space="preserve">
-    <value>ListsCreated</value>
-  </data>
-  <data name="&gt;&gt;TabPageListsCreated.Name" xml:space="preserve">
-    <value>TabPageListsCreated</value>
-  </data>
-  <data name="&gt;&gt;TabPageListsCreated.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPageListsCreated.Parent" xml:space="preserve">
-    <value>TabEventType</value>
-  </data>
-  <data name="&gt;&gt;TabPageListsCreated.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="TabPageBlock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="TabPageBlock.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="TabPageBlock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 193</value>
-  </data>
-  <data name="TabPageBlock.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="TabPageBlock.Text" xml:space="preserve">
-    <value>Block</value>
-  </data>
-  <data name="&gt;&gt;TabPageBlock.Name" xml:space="preserve">
-    <value>TabPageBlock</value>
-  </data>
-  <data name="&gt;&gt;TabPageBlock.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPageBlock.Parent" xml:space="preserve">
-    <value>TabEventType</value>
-  </data>
-  <data name="&gt;&gt;TabPageBlock.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="TabPageUserUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="TabPageUserUpdate.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="TabPageUserUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>706, 193</value>
-  </data>
-  <data name="TabPageUserUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="TabPageUserUpdate.Text" xml:space="preserve">
-    <value>UserUpdate</value>
-  </data>
-  <data name="&gt;&gt;TabPageUserUpdate.Name" xml:space="preserve">
-    <value>TabPageUserUpdate</value>
-  </data>
-  <data name="&gt;&gt;TabPageUserUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPageUserUpdate.Parent" xml:space="preserve">
-    <value>TabEventType</value>
-  </data>
-  <data name="&gt;&gt;TabPageUserUpdate.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="ButtonRefresh.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>

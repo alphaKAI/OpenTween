@@ -36,7 +36,7 @@ namespace OpenTween
     [Serializable]
     public class SettingLocal : SettingBase<SettingLocal>, IDisposable
     {
-#region Settingクラス基本
+        #region Settingクラス基本
         public static SettingLocal Load()
         {
             return LoadSettings();
@@ -46,7 +46,7 @@ namespace OpenTween
         {
             SaveSettings(this);
         }
-#endregion
+        #endregion
 
         [NonSerialized]
         private FontConverter _fc = new FontConverter();
@@ -59,7 +59,6 @@ namespace OpenTween
         public int AdSplitterDistance = 350;
         public Size FormSize = new Size(600, 500);
         public string StatusText = "";
-        public bool UseRecommendStatus = false;
         public int Width1 = 48;
         public int Width2 = 80;
         public int Width3 = 290;
@@ -99,6 +98,14 @@ namespace OpenTween
         {
             get { return _cc.ConvertToString(ColorUnread); }
             set { ColorUnread = (Color)_cc.ConvertFromString(value); }
+        }
+
+        [XmlIgnore]
+        public Color ColorStolen = System.Drawing.SystemColors.ControlText;
+        public string ColorStolenStr
+        {
+            get { return _cc.ConvertToString(ColorStolen); }
+            set { ColorStolen = (Color)_cc.ConvertFromString(value); }
         }
 
         [XmlIgnore]
@@ -253,7 +260,48 @@ namespace OpenTween
             set { ColorDetailLink = (Color)_cc.ConvertFromString(value); }
         }
 
+        [XmlIgnore]
         public string ProxyPassword = "";
+        public string EncryptProxyPassword
+        {
+            get
+            {
+                string pwd = ProxyPassword;
+                if (string.IsNullOrEmpty(pwd)) pwd = "";
+                if (pwd.Length > 0)
+                {
+                    try
+                    {
+                        return MyCommon.EncryptString(pwd);
+                    }
+                    catch (Exception)
+                    {
+                        return "";
+                    }
+                }
+                else
+                {
+                    return "";
+                }
+            }
+            set
+            {
+                string pwd = value;
+                if (string.IsNullOrEmpty(pwd)) pwd = "";
+                if (pwd.Length > 0)
+                {
+                    try
+                    {
+                        pwd = MyCommon.DecryptString(pwd);
+                    }
+                    catch (Exception)
+                    {
+                        pwd = "";
+                    }
+                }
+                ProxyPassword = pwd;
+            }
+        }
 
         public void Dispose()
         {

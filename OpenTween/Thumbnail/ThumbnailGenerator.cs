@@ -1,19 +1,19 @@
 ﻿// OpenTween - Client of Twitter
-// Copyright (c) 2012 kim_upsilon (@kim_upsilon) <https://upsilo.net/~upsilon/>
+// Copyright (c) 2012      kim_upsilon (@kim_upsilon) <https://upsilo.net/~upsilon/>
 // All rights reserved.
-//
+// 
 // This file is part of OpenTween.
-//
+// 
 // This program is free software; you can redistribute it and/or modify it
 // under the terms of the GNU General Public License as published by the Free
 // Software Foundation; either version 3 of the License, or (at your option)
 // any later version.
-//
+// 
 // This program is distributed in the hope that it will be useful, but
 // WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
 // or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
-// for more details.
-//
+// for more details. 
+// 
 // You should have received a copy of the GNU General Public License along
 // with this program. If not, see <http://www.gnu.org/licenses/>, or write to
 // the Free Software Foundation, Inc., 51 Franklin Street - Fifth Floor,
@@ -48,46 +48,25 @@ namespace OpenTween.Thumbnail
                 new ImgAzyobuziNet(autoupdate: true),
 
                 // ImgUr
-                new SimpleThumbnailService(
-                    @"^http://(?:i\.)?imgur\.com/(\w+)(?:\..{3})?$",
-                    "http://img.imgur.com/${1}l.jpg",
-                    "http://img.imgur.com/${1}.jpg"),
+                new SimpleThumbnailService(@"^http://(?:i\.)?imgur\.com/(\w+)(?:\..{3})?$", "http://img.imgur.com/${1}l.jpg"),
 
                 // Twitpic
-                new SimpleThumbnailService(
-                    @"^http://(www\.)?twitpic\.com/(?<photoId>\w+)(/full/?)?$",
-                    "http://twitpic.com/show/thumb/${photoId}",
-                    "http://twitpic.com/show/large/${photoId}"),
+                new SimpleThumbnailService(@"^http://(www\.)?twitpic\.com/(?<photoId>\w+)(/full/?)?$", "http://twitpic.com/show/thumb/${photoId}"),
 
                 // yfrog
-                new SimpleThumbnailService(
-                    @"^http://yfrog\.com/(\w+)$",
-                    "${0}:small",
-                    "${0}"),
+                new SimpleThumbnailService(@"^http://(?:(?:twitter|www)\.)?yfrog\.com/(\w+)$", "http://yfrog.com/${1}:medium"), // fullメンド
 
                 // Lockerz
-                new SimpleThumbnailService(
-                    @"^http://(tweetphoto\.com/[0-9]+|pic\.gd/[a-z0-9]+|(lockerz|plixi)\.com/[ps]/[0-9]+)$",
-                    "http://api.plixi.com/api/tpapi.svc/imagefromurl?size=thumbnail&url=${0}",
-                    "http://api.plixi.com/api/tpapi.svc/imagefromurl?size=big&url=${0}"),
+                new SimpleThumbnailService(@"^http://(tweetphoto\.com/[0-9]+|pic\.gd/[a-z0-9]+|(lockerz|plixi)\.com/[ps]/[0-9]+)$", "http://api.plixi.com/api/tpapi.svc/imagefromurl?size=thumbnail&url=${0}"),
 
                 // MobyPicture
-                new SimpleThumbnailService(
-                    @"^http://moby\.to/(\w+)$",
-                    "http://mobypicture.com/?${1}:small",
-                    "http://mobypicture.com/?${1}:full"),
+                new SimpleThumbnailService(@"^http://moby\.to/(\w+)$", "http://mobypicture.com/?${1}:small"),
 
                 // 携帯百景
-                new SimpleThumbnailService(
-                    @"^http://movapic\.com/pic/(\w+)$",
-                    "http://image.movapic.com/pic/s_${1}.jpeg",
-                    "http://image.movapic.com/pic/m_${1}.jpeg"),
+                new SimpleThumbnailService(@"^http://movapic\.com/pic/(\w+)$", "http://image.movapic.com/pic/s_${1}.jpeg"),
 
                 // はてなフォトライフ
-                new SimpleThumbnailService(
-                    @"^http://f\.hatena\.ne\.jp/(([a-z])[a-z0-9_-]{1,30}[a-z0-9])/((\d{8})\d+)$",
-                    "http://img.f.hatena.ne.jp/images/fotolife/${2}/${1}/${4}/${3}_120.jpg",
-                    "http://img.f.hatena.ne.jp/images/fotolife/${2}/${1}/${4}/${3}.jpg"),
+                new SimpleThumbnailService(@"^http://f\.hatena\.ne\.jp/(([a-z])[a-z0-9_-]{1,30}[a-z0-9])/((\d{8})\d+)$", "http://img.f.hatena.ne.jp/images/fotolife/${2}/${1}/${4}/${3}_120.jpg"),
 
                 // PhotoShare
                 new SimpleThumbnailService(@"^http://(?:www\.)?bcphotoshare\.com/photos/\d+/(\d+)$", "http://images.bcphotoshare.com/storages/${1}/thumb180.jpg"),
@@ -96,14 +75,10 @@ namespace OpenTween.Thumbnail
                 new PhotoShareShortlink(@"^http://bctiny\.com/p(\w+)$"),
 
                 // img.ly
-                new SimpleThumbnailService(@"^http://img\.ly/(\w+)$",
-                    "http://img.ly/show/thumb/${1}",
-                    "http://img.ly/show/full/${1}"),
+                new SimpleThumbnailService(@"^http://img\.ly/(\w+)$", "http://img.ly/show/thumb/${1}"),
 
                 // Twitgoo
-                new SimpleThumbnailService(@"^http://twitgoo\.com/(\w+)$",
-                    "http://twitgoo.com/${1}/mini",
-                    "http://twitgoo.com/${1}/img"),
+                new SimpleThumbnailService(@"^http://twitgoo\.com/(\w+)$", "http://twitgoo.com/${1}/mini"),
 
                 // youtube
                 new Youtube(@"^http://(?:(www\.youtube\.com)|(youtu\.be))/(watch\?v=)?(?<videoid>([\w\-]+))", "http://i.ytimg.com/vi/${videoid}/default.jpg"),
@@ -112,10 +87,7 @@ namespace OpenTween.Thumbnail
                 new Nicovideo(@"^http://(?:(www|ext)\.nicovideo\.jp/watch|nico\.ms)/(?:sm|nm)?([0-9]+)(\?.+)?$", "http://www.nicovideo.jp/api/getthumbinfo/${id}"),
 
                 // ニコニコ静画
-                new SimpleThumbnailService(
-                    @"^http://(?:seiga\.nicovideo\.jp/seiga/|nico\.ms/)im(?<id>\d+)",
-                    "http://lohas.nicoseiga.jp/thumb/${id}q?",
-                    "http://lohas.nicoseiga.jp/thumb/${id}l?"),
+                new SimpleThumbnailService(@"^http://(?:seiga\.nicovideo\.jp/seiga/|nico\.ms/)im(?<id>\d+)", "http://lohas.nicoseiga.jp/thumb/${id}q?"),
 
                 // pixiv
                 new MetaThumbnailService(@"^http://www\.pixiv\.net/(member_illust|index)\.php\?(?=.*mode=(medium|big))(?=.*illust_id=(?<illustId>[0-9]+)).*$"),
@@ -124,10 +96,7 @@ namespace OpenTween.Thumbnail
                 new MetaThumbnailService(@"^http://www\.flickr\.com/.+$"),
 
                 // フォト蔵
-                new SimpleThumbnailService(
-                    @"^http://photozou\.jp/photo/show/(?<userId>[0-9]+)/(?<photoId>[0-9]+)",
-                    "http://photozou.jp/p/thumb/${photoId}",
-                    "http://photozou.jp/p/img/${photoId}"),
+                new SimpleThumbnailService(@"^http://photozou\.jp/photo/show/(?<userId>[0-9]+)/(?<photoId>[0-9]+)", "http://photozou.jp/p/thumb/${photoId}"),
 
                 // TwitVideo
                 new SimpleThumbnailService(@"^http://twitvideo\.jp/(\w+)$", "http://twitvideo.jp/img/thumb/${1}"),
@@ -154,16 +123,10 @@ namespace OpenTween.Thumbnail
                 new SimpleThumbnailService(@"^http://c[0-9]+\.cdn[0-9]+\.cloudfiles\.rackspacecloud\.com/[a-z_0-9]+", "${0}"),
 
                 // Instagram
-                new SimpleThumbnailService(
-                    @"^http://instagr\.am/p/.+/",
-                    "${0}media/?size=m",
-                    "${0}media/?size=l"),
+                new SimpleThumbnailService(@"^http://instagr\.am/p/.+/", "${0}media/?size=m"),
 
                 // pikubo
-                new SimpleThumbnailService(
-                    @"^http://pikubo\.me/([a-z0-9-_]+)",
-                    "http://pikubo.me/q/${1}",
-                    "http://pikubo.me/l/${1}"),
+                new SimpleThumbnailService(@"^http://pikubo\.me/([a-z0-9-_]+)", "http://pikubo.me/q/${1}"),
 
                 // Foursquare
                 new Services.Foursquare(@"^https?://(4sq|foursquare)\.com/.+"),
@@ -172,22 +135,13 @@ namespace OpenTween.Thumbnail
                 new Tinami(@"^http://www\.tinami\.com/view/(?<ContentId>\d+)$", "http://api.tinami.com/content/info?cont_id=${ContentId}&api_key=" + ApplicationSettings.TINAMIApiKey),
 
                 // pic.twitter.com
-                new SimpleThumbnailService(
-                    @"^https?://p\.twimg\.com/.*$",
-                    "${0}:thumb",
-                    "${0}"),
+                new SimpleThumbnailService(@"^https?://p\.twimg\.com/.*$", "${0}:thumb"),
 
                 // TwitrPix
-                new SimpleThumbnailService(
-                    @"^http://twitrpix\.com/(\w+)$",
-                    "http://img.twitrpix.com/thumb/${1}",
-                    "http://img.twitrpix.com/${1}"),
+                new SimpleThumbnailService(@"^http://twitrpix\.com/(\w+)$", "http://img.twitrpix.com/thumb/${1}"),
 
                 // Pckles
-                new SimpleThumbnailService(
-                    @"^https?://pckles\.com/\w+/\w+$",
-                    "${0}.resize.jpg",
-                    "${0}.jpg"),
+                new SimpleThumbnailService(@"^https?://pckles\.com/\w+/\w+$", "${0}.resize.jpg"),
 
                 // via.me
                 new ViaMe(@"^https?://via\.me/-(\w+)$", "http://via.me/api/v1/posts/$1"),

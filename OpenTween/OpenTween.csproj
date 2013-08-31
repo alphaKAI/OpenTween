@@ -53,12 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddAccountDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddAccountDialog.Designer.cs">
-      <DependentUpon>AddAccountDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Api\ApiLimit.cs" />
     <Compile Include="Api\TwitterApiAccessLevel.cs" />
     <Compile Include="Api\TwitterApiStatus.cs" />
@@ -86,6 +80,7 @@
       <DependentUpon>AuthDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Bing.cs" />
+    <Compile Include="Connection\HttpOAuthApiProxy.cs" />
     <Compile Include="Connection\HttpTwitter.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -95,9 +90,6 @@
     <Compile Include="Connection\IHttpConnection.cs" />
     <Compile Include="Connection\imgly.cs" />
     <Compile Include="Connection\IMultimediaShareService.cs" />
-    <Compile Include="Connection\OAuthConsumer.cs" />
-    <Compile Include="Connection\OAuthCredential.cs" />
-    <Compile Include="Connection\TwipplePhoto.cs" />
     <Compile Include="EventViewerDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +121,7 @@
     <Compile Include="ListManage.Designer.cs">
       <DependentUpon>ListManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Connection\Plixi.cs" />
     <Compile Include="Connection\TwitPic.cs" />
     <Compile Include="Connection\TwitterPhoto.cs" />
     <Compile Include="Connection\TwitVideo.cs" />
@@ -213,6 +206,7 @@
     <Compile Include="OpenURL.Designer.cs">
       <DependentUpon>OpenURL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Outputz.cs" />
     <Compile Include="PictureBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -269,9 +263,6 @@
     <Compile Include="Connection\HttpConnection.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddAccountDialog.resx">
-      <DependentUpon>AddAccountDialog.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AuthDialog.en.resx">
       <DependentUpon>AuthDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -336,7 +327,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppendSettingDialog.zh-CHS.resx">
       <DependentUpon>AppendSettingDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ListManage.zh-CHS.resx">
       <DependentUpon>ListManage.cs</DependentUpon>

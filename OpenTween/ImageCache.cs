@@ -57,9 +57,14 @@ namespace OpenTween
             lock (this.lockObject)
             {
                 this.innerDictionary = new LRUCacheDictionary<string, Task<MemoryImage>>(trimLimit: 300, autoTrimCount: 100);
-
+                
                 this.innerDictionary.CacheRemoved += (s, e) => {
-                    // まだ参照されている場合もあるのでDisposeはファイナライザ任せ
+                    var imageTask = e.Item.Value;
+
+                    if (imageTask.Status == TaskStatus.RanToCompletion)
+                        imageTask.Result.Dispose();
+
+                    imageTask.Dispose();
 
                     this.CacheRemoveCount++;
                 };
@@ -102,33 +107,36 @@ namespace OpenTween
 
                     if (this.innerDictionary.ContainsKey(address) && !this.innerDictionary[address].IsFaulted)
                         cachedImageTask = this.innerDictionary[address];
+                }
 
-                    if (cachedImageTask != null)
-                        return cachedImageTask;
+                if (cachedImageTask != null)
+                    return cachedImageTask;
 
-                    cancelToken.ThrowIfCancellationRequested();
+                cancelToken.ThrowIfCancellationRequested();
 
-                    using (var client = new OTWebClient() { Timeout = 10000 })
+                using (var client = new OTWebClient() { Timeout = 10000 })
+                {
+                    var imageTask = client.DownloadDataAsync(new Uri(address), cancelToken).ContinueWith(t =>
                     {
-                        var imageTask = client.DownloadDataAsync(new Uri(address), cancelToken).ContinueWith(t =>
+                        MemoryImage image = null;
+                        if (t.Status == TaskStatus.RanToCompletion)
                         {
-                            MemoryImage image = null;
-                            if (t.Status == TaskStatus.RanToCompletion)
-                            {
-                                image = MemoryImage.CopyFromBytes(t.Result);
-                            }
+                            image = MemoryImage.CopyFromBytes(t.Result);
+                        }
 
-                            if (t.Exception != null)
-                                t.Exception.Handle(e => e is WebException);
+                        if (t.Exception != null)
+                            t.Exception.Handle(e => e is WebException);
 
-                            // FIXME: MemoryImage.Dispose() が正しいタイミングで呼ばれるように修正すべき
-                            return image;
-                        }, cancelToken);
+                        // FIXME: MemoryImage.Dispose() が正しいタイミングで呼ばれるように修正すべき
+                        return image;
+                    }, cancelToken);
 
+                    lock (this.lockObject)
+                    {
                         this.innerDictionary[address] = imageTask;
-
-                        return imageTask;
                     }
+
+                    return imageTask;
                 }
             }, cancelToken).Unwrap();
         }
@@ -168,11 +176,7 @@ namespace OpenTween
                 lock (this.lockObject)
                 {
                     foreach (var item in this.innerDictionary)
-                    {
-                        var task = item.Value;
-                        if (task.Status == TaskStatus.RanToCompletion && task.Result != null)
-                            task.Result.Dispose();
-                    }
+                        item.Value.Dispose();
 
                     this.innerDictionary.Clear();
                     this.cancelTokenSource.Dispose();

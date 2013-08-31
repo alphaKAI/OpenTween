@@ -87,7 +87,7 @@ namespace OpenTween
             }, TaskContinuationOptions.OnlyOnRanToCompletion);
         }
 
-        public MemoryImage Image
+        public Image Image
         {
             get
             {
@@ -96,7 +96,7 @@ namespace OpenTween
 
                 var img = this._ImageReference.Target as MemoryImage;
 
-                return img;
+                return img == null ? null : img.Image;
             }
         }
 
